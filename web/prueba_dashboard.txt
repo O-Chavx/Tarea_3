@@ -1,0 +1,58 @@
+Prueba del dashboard · 56 comprobaciones · todas OK
+
+OK     Carga: 6 KPI
+OK     Mapa: 1,823 polígonos de distritos
+OK     Mapa: 142 unidades mineras
+OK     Cuatro gráficos dibujados
+OK     Tres hallazgos visibles
+OK     Todos · todos · TODOS: distritos analizados = 1873  · pantalla 1,873 / 109 mineros
+OK     Todos · todos · TODOS: unidades mineras = 142
+OK     Todos · todos · TODOS: pobreza media 26.8 vs 34.6 %  · 26.8 vs 34.6 %
+OK     Todos · todos · TODOS: triángulos del mapa = 142
+OK     Cajamarca · todos · TODOS: distritos analizados = 127  · pantalla 127 / 8 mineros
+OK     Cajamarca · todos · TODOS: unidades mineras = 9
+OK     Cajamarca · todos · TODOS: pobreza media 52.9 vs 58.8 %  · 52.9 vs 58.8 %
+OK     Cajamarca · todos · TODOS: triángulos del mapa = 142
+OK     Junín · todos · TODOS: distritos analizados = 124  · pantalla 124 / 11 mineros
+OK     Junín · todos · TODOS: unidades mineras = 22
+OK     Junín · todos · TODOS: pobreza media 18.8 vs 27.2 %  · 18.8 vs 27.2 %
+OK     Junín · todos · TODOS: triángulos del mapa = 142
+OK     Todos · todos · oro: distritos analizados = 1873  · pantalla 1,873 / 47 mineros
+OK     Todos · todos · oro: unidades mineras = 56
+OK     Todos · todos · oro: pobreza media 32.6 vs 34.2 %  · 32.6 vs 34.2 %
+OK     Todos · todos · oro: triángulos del mapa = 56
+OK     Todos · todos · cobre: distritos analizados = 1873  · pantalla 1,873 / 41 mineros
+OK     Todos · todos · cobre: unidades mineras = 52
+OK     Todos · todos · cobre: pobreza media 23.2 vs 34.4 %  · 23.2 vs 34.4 %
+OK     Todos · todos · cobre: triángulos del mapa = 52
+OK     Todos · minería subterránea · TODOS: distritos analizados = 1873  · pantalla 1,873 / 39 mineros
+OK     Todos · minería subterránea · TODOS: unidades mineras = 52
+OK     Todos · minería subterránea · TODOS: pobreza media 25.9 vs 34.3 %  · 25.9 vs 34.3 %
+OK     Todos · minería subterránea · TODOS: triángulos del mapa = 52
+OK     Arequipa · minería superficial · TODOS: distritos analizados = 109  · pantalla 109 / 3 mineros
+OK     Arequipa · minería superficial · TODOS: unidades mineras = 3
+OK     Arequipa · minería superficial · TODOS: pobreza media 21.8 vs 20.2 %  · 21.8 vs 20.2 %
+OK     Arequipa · minería superficial · TODOS: triángulos del mapa = 39
+OK     Puno · todos · nometal: distritos analizados = 110  · pantalla 110 / 1 mineros
+OK     Puno · todos · nometal: unidades mineras = 1
+OK     Puno · todos · nometal: pobreza media 34.6 vs 44.3 %  · 34.6 vs 44.3 %
+OK     Puno · todos · nometal: triángulos del mapa = 46
+OK     Lima · todos · plata: distritos analizados = 170  · pantalla 170 / 8 mineros
+OK     Lima · todos · plata: unidades mineras = 9
+OK     Lima · todos · plata: pobreza media 17.2 vs 17.5 %  · 17.2 vs 17.5 %
+OK     Lima · todos · plata: triángulos del mapa = 80
+OK     Cusco · todos · TODOS: distritos analizados = 112  · pantalla 112 / 4 mineros
+OK     Cusco · todos · TODOS: unidades mineras = 4
+OK     Cusco · todos · TODOS: pobreza media 40.4 vs 34.7 %  · 40.4 vs 34.7 %
+OK     Cusco · todos · TODOS: triángulos del mapa = 142
+OK     Loreto · todos · TODOS: distritos analizados = 53  · pantalla 53 / 0 mineros
+OK     Loreto · todos · TODOS: unidades mineras = 0
+OK     Loreto · todos · TODOS: sin distritos mineros → KPI sin cifra
+OK     Loreto · todos · TODOS: triángulos del mapa = 142
+OK     Restablecer vuelve a todo el Perú
+OK     Buscador: «yauli» encuentra los distritos y la provincia Yauli  · 12 filas
+OK     Clic en la tabla abre la ficha del distrito
+OK     Mapa cambia a distancia a la mina
+OK     Modo oscuro cambia el fondo  · rgb(14, 20, 26)
+OK     Celular (390 px): sin desplazamiento horizontal  · [390, 390]
+OK     Sin errores de JavaScript

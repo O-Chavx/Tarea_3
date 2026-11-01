@@ -1,0 +1,34 @@
+Verificación de datos · 32 comprobaciones · todas OK
+
+OK     1,873 distritos con pobreza  · 1873
+OK     UBIGEO único y de 6 dígitos
+OK     Pobreza entre 0 y 100 %  · 0.06–81.26
+OK     Sin valores faltantes en pobreza
+OK     25 departamentos
+OK     142 unidades mineras
+OK     Unidades sin duplicados (unidad, titular, UBIGEO)
+OK     Todo UBIGEO minero existe en la base de pobreza
+OK     109 distritos mineros
+OK     Suma de unidades por distrito = 142
+OK     Coordenadas de minas dentro del Perú
+OK     1,823 polígonos en el mapa (50 distritos nuevos sin polígono)
+OK     Departamentos suman 1,873 distritos
+OK     3 distritos más pobres = Uchuraccay, Oxamarca, Anguía (INEI)  · UCHURACCAY, OXAMARCA, ANGUIA
+OK     16 de los 20 más pobres en Cajamarca (INEI)
+OK     713 distritos con pobreza ≥ 40 % (INEI)  · 713
+OK     Pobreza media distritos mineros = 26.8 %
+OK     Pobreza media resto = 34.6 %
+OK     Medianas 24.5 % y 35.0 %
+OK     Brecha bruta = −7.8 pp
+OK     Pobreza ≥ 40 %: 22.0 % mineros vs 39.1 % resto
+OK     24 distritos mineros con pobreza ≥ 40 %
+OK     Brecha dentro del departamento = −4.4 pp  · -4.395
+OK     18 de 21 departamentos con distritos mineros menos pobres
+OK     Bandas: 26.8 / 31.2 / 34.7 / 36.4 / 36.9 %
+OK     Bandas crecen con la distancia
+OK     Cajamarca: 8 distritos mineros, 52.9 % de pobreza media
+OK     Cobre 21.0 % y oro 32.0 % (por unidad)
+OK     Junín es el departamento con más unidades (22)
+OK     Dashboard: 1,873 distritos y 142 minas
+OK     Dashboard: pobreza igual a la base procesada
+OK     Dashboard: mismo resultados.json

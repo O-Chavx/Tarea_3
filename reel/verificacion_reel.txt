@@ -1,0 +1,32 @@
+Verificación del guion y del reel · 30 comprobaciones · todas OK
+
+OK     Guion escena 1: «mil ochocientos setenta y tres»
+OK     Guion escena 1: «ciento cuarenta y dos unidades»
+OK     Guion escena 2: «veintiséis punto ocho»
+OK     Guion escena 2: «treinta y cuatro punto seis»
+OK     Guion escena 3: «siete punto ocho»
+OK     Guion escena 3: «cuatro punto cuatro»
+OK     Guion escena 4: «treinta y uno por ciento a menos de veinticinco»
+OK     Guion escena 4: «casi treinta y siete por ciento a más de cien»
+OK     Guion escena 4: «la pobreza sube cuando nos alejamos»
+OK     Guion escena 5: «Veinticuatro distritos mineros»
+OK     Guion escena 5: «sus ocho distritos mineros»
+OK     Guion escena 5: «casi cincuenta y tres por ciento»
+OK     Cifra en pantalla escena 1 = 1,873
+OK     Cifra en pantalla escena 2 = 26.8 % vs 34.6 %
+OK     Cifra en pantalla escena 3 = −4.4 pp
+OK     Cifra en pantalla escena 4 = 31 % → 37 %
+OK     Cifra en pantalla escena 5 = 24
+OK     Cierre aclara que es asociación, no causa
+OK     Duración entre 45 y 75 s  · 51.3 s
+OK     5 a 7 escenas  · 6 escenas
+OK     Video vertical 1080 × 1920 en H.264
+OK     Audio AAC
+OK     Tamaño < 50 MB (sube a LinkedIn y GitHub)  · 6.7 MB
+OK     Sonoridad entre −20 y −12 LUFS  · -17.2 LUFS
+OK     Música al menos 12 dB por debajo de la voz  · mezcla -17.0 dB, música sola en 12 pausas -32.2 dB
+OK     Subtítulos frente al guion: error de palabras < 5 %  · WER 0.006
+OK     WER por escena ≤ 0.25 (control de Whisper al narrar)  · 0.00, 0.09, 0.08, 0.00, 0.00, 0.04
+OK     Aviso «VOZ GENERADA CON IA» en pantalla
+OK     Fuente de datos en pantalla
+OK     Créditos de música y gráficos

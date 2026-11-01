@@ -1,7 +1,9 @@
-# Análisis y dashboard
+# Datos, análisis y verificación
 pandas>=2.0
 numpy>=1.24
 scipy>=1.10
 matplotlib>=3.7
-# Reel (entorno aparte, como en la sesión 15)
+# Prueba del dashboard en navegador (luego: playwright install chromium)
+playwright>=1.40
+# Reel: entorno aparte (ver reel/README.md)
 # qwen-tts faster-whisper imageio-ffmpeg soundfile jiwer num2words pillow

@@ -1,106 +1,201 @@
-# Minería y pobreza en el Perú
+# Minería y pobreza en el Perú: ¿los distritos con minas son menos pobres?
 
-**Tarea 3 · Python Intermedio · Oscar Andres Chavez Inocente**
+Tarea 3 del curso **Python Intermedio**: *Del dato a la historia: dashboard interactivo y reel con IA*.
+Autor: **Oscar Andres Chavez Inocente**.
 
-**Pregunta de investigación:** ¿Los distritos que albergan unidades mineras tienen menos pobreza monetaria que el resto del Perú, y esa diferencia se mantiene al comparar dentro del mismo departamento?
+## Enlaces
 
-| | |
+| Producto | Enlace |
 |---|---|
-| Repositorio | https://github.com/O-Chavx/Tarea_3 |
 | Dashboard público | https://o-chavx.github.io/Tarea_3/web/ |
-| Publicación de LinkedIn | https://www.linkedin.com/… *(reemplazar)* |
-| Reel | [`reel/reel.mp4`](reel/reel.mp4) (51 s, 1080 × 1920) · subtítulos en [`reel/subtitulos.srt`](reel/subtitulos.srt) |
+| Publicación de LinkedIn con el reel | *pendiente* |
+| Publicación de LinkedIn con capturas del dashboard | *pendiente* |
+| Reel (archivo) | [`reel/reel.mp4`](reel/reel.mp4): 51 s, vertical, con voz generada con IA a partir de mi voz |
+| Repositorio | https://github.com/O-Chavx/Tarea_3 |
 
-![Dashboard: cabecera, filtros y KPIs](docs/captura_dashboard_1.png)
+## Tema y pregunta de investigación
+
+**Tema:** minería y pobreza a nivel distrital en el Perú.
+
+**Pregunta:** ¿Los distritos que albergan unidades mineras tienen menos pobreza monetaria que el resto del país, y esa diferencia se mantiene al comparar dentro del mismo departamento?
+
+**Cobertura:** 1,873 distritos de los 25 departamentos; pobreza monetaria 2018 (Mapa de Pobreza del INEI, publicado en 2020); 142 unidades mineras en producción del registro MINEM.
 
 ## Descripción
 
-El proyecto cruza la pobreza monetaria estimada por el INEI para **1,873 distritos** (2018) con la ubicación de **142 unidades mineras** registradas por el MINEM. Con Python se limpian y unen las bases, se calcula para cada distrito si alberga minas y a qué distancia está la mina más cercana, y se comparan los niveles de pobreza. Los resultados se publican en un dashboard interactivo (D3.js) y se resumen en un reel vertical de unos 60 segundos narrado con mi voz clonada por IA.
+El proyecto cruza la pobreza monetaria que el INEI estimó para cada distrito con la ubicación de las unidades mineras del MINEM.
 
-**Cobertura:** Perú, 25 departamentos, 1,873 distritos. **Periodo:** pobreza monetaria 2018 (Mapa de Pobreza publicado por INEI en 2020); unidades mineras del registro MINEM del curso.
+- Para cada distrito: si alberga minas, cuántas y a qué distancia está la mina más cercana.
+- Comparaciones: distritos mineros frente al resto, en todo el país y **dentro de cada departamento**, por banda de distancia, por mineral y por método de explotación.
+- Productos:
+  - un dashboard público e interactivo;
+  - un reel de divulgación con mi voz clonada por IA;
+  - dos publicaciones en LinkedIn: una con el reel y otra con capturas del dashboard.
 
-## Fuentes de datos
+## Estado del proyecto
 
-| Archivo | Fuente | Contenido |
+| Etapa | Estado |
+|---|---|
+| 1. Obtención, procesamiento, análisis y verificación de datos | ✅ Completa: 32 comprobaciones OK |
+| 2. Dashboard público e interactivo | ✅ Terminado: 56 pruebas en navegador OK · ⏳ activar GitHub Pages |
+| 3. Reel con IA (guion, voz propia clonada, imágenes, música, subtítulos) | ✅ Terminado: 30 comprobaciones OK ([`reel/`](reel/README.md)) |
+| 4. Publicación en LinkedIn y README final | ⏳ Textos y capturas listos en [`docs/publicacion/`](docs/publicacion/) |
+
+## Dashboard
+
+[Abrir el dashboard](https://o-chavx.github.io/Tarea_3/web/). Es una página estática en `web/` (HTML, CSS y JavaScript con D3.js), publicada con GitHub Pages.
+
+![Vista general: pregunta, filtros, KPI y mapa](docs/capturas/01_vista_general.png)
+
+**Controles.** Una barra de filtros fija arriba actualiza todos los indicadores, el mapa, los gráficos y la tabla:
+
+- **Departamento:** todo el Perú o uno de los 25 (el mapa se acerca a él).
+- **Tipo de explotación:** subterránea, superficial, no metálica, refinería o fundición.
+- **Mineral:** oro, cobre, plata, zinc o plomo, no metálicos.
+- **Buscar distrito:** filtra la tabla por distrito o provincia.
+- **Colorear el mapa por:** pobreza o distancia a la mina más cercana.
+
+Además: clic en un distrito (mapa, gráfico o tabla) para ver su ficha, clic en un departamento del gráfico de brechas para filtrarlo, zoom en el mapa y botón **Restablecer**. Al cambiar el filtro de minas, **todo se recalcula en el navegador**: qué distritos son mineros y la distancia de cada distrito a la mina más cercana.
+
+**Seis KPI:** distritos analizados, unidades mineras, pobreza media (con minas frente a sin minas), brecha bruta, porcentaje de distritos con pobreza ≥ 40 % y brecha dentro del mismo departamento (o el distrito minero más pobre, si se elige un departamento).
+
+**Visualizaciones:**
+
+- mapa interactivo de 1,823 distritos con las 142 unidades mineras;
+- pobreza según la distancia a una mina;
+- brecha dentro de cada departamento (gráfico de mancuernas);
+- distribución: un punto por distrito, con medianas;
+- pobreza del distrito según el mineral explotado;
+- tabla ordenable y con buscador de los 1,873 distritos.
+
+Funciona en celular y en modo oscuro.
+
+![Comparación por departamento, distribución y mineral](docs/capturas/02_comparaciones.png)
+
+**Prueba automática.** `scripts/probar_dashboard.py` abre el dashboard en Chromium sin interfaz y hace **56 comprobaciones, todas OK** (`web/prueba_dashboard.txt`):
+
+- Cambia los filtros en 11 combinaciones de departamento × tipo de explotación × mineral. En cada una compara los KPI y el número de minas del mapa con lo que se calcula en pandas.
+- Prueba Restablecer, el buscador, el clic en la tabla, el cambio de variable del mapa, el modo oscuro y la vista de celular.
+- Falla ante cualquier error de JavaScript.
+
+## Reel
+
+[`reel/reel.mp4`](reel/reel.mp4) cuenta los tres hallazgos en 51 segundos. El guion, la voz, los subtítulos, la música y el montaje se detallan en [`reel/README.md`](reel/README.md).
+
+| Requisito | Cómo se cumple |
+|---|---|
+| 45 a 75 s y 5 a 7 escenas | 51.3 s y 6 escenas: gancho, tres hallazgos, matiz (Cajamarca) e invitación al tablero |
+| Formato | Vertical 9:16, 1080 × 1920, H.264, 6.7 MB |
+| Narración con IA a partir de la voz propia | Qwen3-TTS 1.7B (Apache 2.0) clonó mi voz a partir de una grabación propia de 24.7 s (no se sube a git) |
+| Imágenes, gráficos y mapas | Mapa nacional, mapa de Cajamarca, tres gráficos y una captura del dashboard, con acercamiento lento |
+| Música | Pista original generada con código (CC0), 15 dB por debajo de la voz |
+| Subtítulos | Sincronizados palabra por palabra e incrustados; también en `reel/subtitulos.srt` |
+| Fuente, créditos y aviso de IA | «Voz generada con IA a partir de mi voz», «Datos: INEI, Mapa de pobreza 2018 · MINEM» y créditos durante todo el video |
+
+**Verificación.** `scripts/verificar_reel.py` hace **30 comprobaciones, todas OK**:
+
+- cada cifra del guion frente a `resultados.json`;
+- formato, duración y sonoridad (−17.2 LUFS);
+- música bajo la voz;
+- subtítulos frente al guion: Whisper transcribió el audio final con un error de palabras de **0.006**.
+
+## Fuentes de datos y metodología
+
+| Fuente | Enlace | Uso |
 |---|---|---|
-| `datos/originales/Poverty.csv` | INEI (2020), [Mapa de pobreza monetaria provincial y distrital 2018](https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1718/Libro.pdf) | Pobreza monetaria por distrito (punto medio del IC 95 %) |
-| `datos/originales/MINING.csv` | MINEM, [unidades mineras en producción](http://www.minem.gob.pe/_publicaSector.php?idSector=1&idCategoria=24) | 142 unidades: titular, método, productos, UBIGEO y coordenadas |
-| `datos/originales/peru_distrital_simple.geojson` | Límites distritales INEI (simplificados) | 1,834 polígonos |
+| INEI (2020), *Mapa de pobreza monetaria provincial y distrital 2018* | [PDF](https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1718/Libro.pdf) | Pobreza de los 1,873 distritos |
+| MINEM, unidades mineras en producción | [portal MINEM](http://www.minem.gob.pe/_publicaSector.php?idSector=1&idCategoria=24) | 142 unidades: titular, método, minerales, UBIGEO y coordenadas |
+| Límites distritales (INEI), GeoJSON simplificado | [repositorio del curso](https://github.com/d2cml-ai/Data-Science-Python/tree/main/sessions/06-geoespacial/lab/Data) | Mapa, centroides y distancias |
 
-Las cuatro bases vienen del repositorio del curso ([d2cml-ai/Data-Science-Python](https://github.com/d2cml-ai/Data-Science-Python/tree/main/sessions/06-geoespacial/lab/Data), sesión 06) y se descargaron el 30 de octubre de 2026. `scripts/obtener_datos.py` las vuelve a bajar y muestra su huella sha256 (Poverty `b54a657567b7`, MINING `19a493f05066`, distrital `1eba0da33464`).
+Las bases vienen del repositorio del curso (sesión 06). `scripts/obtener_datos.py` las descarga y muestra su SHA-256: Poverty `b54a657567b7`, MINING `19a493f05066` y distrital `1eba0da33464`. Se obtuvieron el 30 de octubre de 2026.
 
-**Verificación de la fuente de pobreza:** los tres distritos más pobres de la base (Uchuraccay, Oxamarca y Anguía) son los mismos que reportó el INEI al publicar el mapa, y en ambos casos 16 de los 20 distritos más pobres están en Cajamarca ([Peru Support Group, 2020](https://perusupportgroup.org.uk/2020/02/poverty-map-published/)).
+**Metodología.** Un distrito es «minero» si alberga al menos una unidad, según su UBIGEO oficial.
 
-## Metodología
+- **Brecha bruta:** pobreza media de los distritos mineros menos la del resto.
+- **Brecha dentro del departamento:** la misma resta en cada departamento, promediada según su número de distritos mineros. Así se compara cada distrito minero con sus vecinos y no con todo el país.
+- **Distancia:** haversine desde el centroide del distrito a la unidad más cercana. Se calcula sin geopandas, con numpy y `matplotlib.path`.
+- **Pruebas:** Mann–Whitney y permutación con 10,000 sorteos dentro de cada departamento.
 
-1. **Limpieza** (`scripts/procesar_datos.py`): UBIGEO a 6 dígitos; espacios y mayúsculas inconsistentes en nombres («MINERíA» / «MINERÍA», «APURIMAC» / «APURÍMAC»); control de rango de pobreza (0–100) y de duplicados; separación de los productos de cada unidad (Au, Ag, Cu, Zn, Pb…) en metálicos y no metálicos. Las columnas `PBI_PC` e `IDH` se descartan: son departamentales, no documentan año ni fuente y tienen `#N/D` en Callao.
-2. **Cruce espacial sin geopandas:** centroide de cada polígono (fórmula de área), distancia haversine del centroide a la unidad minera más cercana, y control de que cada mina caiga dentro de su distrito declarado (`matplotlib.path`).
-3. **Indicadores** (`scripts/analizar_datos.py`):
-   - Distrito minero = alberga al menos una unidad (por UBIGEO oficial).
-   - Brecha bruta = pobreza media de distritos mineros − pobreza media del resto.
-   - Brecha dentro del departamento = la misma resta en cada departamento, promediada según su número de distritos mineros.
-   - Porcentaje de distritos con pobreza ≥ 40 %; pobreza media por banda de distancia (0, < 25, 25–50, 50–100, > 100 km); pobreza media por mineral y método.
-   - Significancia: Mann–Whitney (brecha bruta) y prueba de permutación con 10,000 sorteos de la etiqueta «minero» dentro de cada departamento.
-4. Todas las cifras quedan en `datos/procesados/resultados.json`, de donde las toman el dashboard, el guion del reel y este README.
+Las variables, fórmulas y decisiones de limpieza se detallan en [`docs/metodologia.md`](docs/metodologia.md).
 
-## Hallazgos principales
+**Verificación.** `datos/procesados/verificacion.txt` tiene **32 comprobaciones, todas OK**.
 
-1. **Los distritos con minas son menos pobres en promedio: −7.8 puntos.** Su pobreza media es 26.8 % frente a 34.6 % del resto (mediana 24.5 % vs 35.0 %). Solo el 22.0 % de los 109 distritos mineros supera el 40 % de pobreza, frente al 39.1 % de los demás (Mann–Whitney, p < 0.001).
-2. **Al comparar dentro de cada departamento, la ventaja se reduce casi a la mitad: −4.4 puntos.** Parte de la brecha bruta se explica por *dónde* están las minas. Aun así, la diferencia se mantiene en 18 de 21 departamentos y no aparece por azar (permutación, p < 0.0001). En Cusco (+5.7) y Huánuco (+5.6) los distritos mineros son más pobres que el resto de su departamento.
-3. **La pobreza aumenta con la distancia a una mina, pero la mina no garantiza bienestar.** La pobreza media pasa de 26.8 % en distritos mineros a 31.2 % a menos de 25 km, 34.7 % entre 25 y 50 km, 36.4 % entre 50 y 100 km y 36.9 % a más de 100 km. Sin embargo, 24 distritos mineros superan el 40 %: los 8 de Cajamarca promedian 52.9 %, y Cachachi (76.9 %) y Encañada (74.9 %) están entre los más pobres del país.
+- **Contraste con el INEI:** los tres distritos más pobres son los mismos que publicó el INEI (Uchuraccay, Oxamarca y Anguía). También coinciden los 16 de los 20 más pobres en Cajamarca y los **713 distritos** con pobreza de 40 % o más ([fuente](https://perusupportgroup.org.uk/2020/02/poverty-map-published/)).
+- **Cifras propias:** cada número del README, del dashboard y del reel se recalcula desde los CSV.
+- **Dashboard:** sus datos son idénticos a los procesados.
 
-Además: los distritos con unidades de cobre promedian 21.0 % de pobreza y los de oro 32.0 %; entre distritos mineros, tener más unidades no se asocia con menos pobreza (Spearman ρ = −0.13, p = 0.19).
+## Tres hallazgos principales
 
-![Dashboard: comparación por departamento, distribución y mineral](docs/captura_dashboard_2.png)
+Detalle en [`docs/hallazgos.md`](docs/hallazgos.md).
+
+1. **Los distritos con minas son menos pobres en promedio: −7.8 puntos.**
+   - Su pobreza media es **26.8 %**, frente a **34.6 %** del resto (mediana 24.5 % frente a 35.0 %).
+   - Solo el 22.0 % de los 109 distritos mineros supera el 40 % de pobreza, frente al 39.1 % de los demás (Mann–Whitney, p < 0.001).
+2. **Dentro del mismo departamento, la ventaja baja casi a la mitad: −4.4 puntos.**
+   - Parte de la brecha se explica por *dónde* están las minas.
+   - Aun así, se mantiene en **18 de 21** departamentos y no aparece por azar (permutación, p < 0.0001).
+   - En Cusco (+5.7) y Huánuco (+5.6), los distritos mineros son *más* pobres que el resto de su departamento.
+3. **La pobreza aumenta con la distancia a una mina, pero la mina no garantiza bienestar.**
+   - La pobreza media pasa de 26.8 % en los distritos mineros a 31.2 % a menos de 25 km, y a 36.9 % a más de 100 km.
+   - A más de 100 km, el 54.4 % de los distritos supera el 40 %.
+   - Pero **24 distritos mineros** superan ese umbral: los 8 de Cajamarca promedian **52.9 %**.
+
+![Hallazgos en el dashboard](docs/capturas/05_hallazgos.png)
 
 ## Limitaciones
 
-- **Asociación, no causalidad.** Las minas no se ubican al azar; los distritos mineros pueden diferir en altitud, urbanización o conectividad. Además, algunas «unidades» son refinerías o fundiciones en zonas urbanas (Lima, Ica, Arequipa).
-- **Un solo corte (2018).** No permite ver si la pobreza cambió después de la llegada de la mina.
+- **Asociación, no causalidad.** Las minas no se ubican al azar: los distritos mineros pueden diferir en altitud, urbanización o conectividad. Además, refinerías y fundiciones están en zonas urbanas.
+- **Un solo corte (2018).** No permite ver si la pobreza cambió después de que llegó la mina.
 - **Promedios simples por distrito**, sin ponderar por población: un distrito de 500 habitantes pesa igual que uno de 500,000.
-- **Registro minero incompleto:** 142 unidades formales; no incluye minería artesanal ni informal ni proyectos en exploración. En 33 unidades la coordenada cae fuera del distrito declarado; para clasificar distritos se usa el UBIGEO oficial y las coordenadas solo para mapas y distancias.
-- **Mapa desactualizado:** el geojson tiene 1,834 polígonos; 50 distritos creados después (p. ej. Uchuraccay) no tienen polígono ni distancia, pero sí entran en los KPIs y la tabla.
-- La pobreza distrital es una estimación en áreas pequeñas con intervalo de confianza; aquí se usa el punto medio.
+- **La pobreza distrital es una estimación** en áreas pequeñas con intervalo de confianza. Aquí se usa el punto medio de ese intervalo.
+- **Registro minero incompleto.** Incluye 142 unidades formales, sin minería artesanal, informal ni en exploración. En 33 unidades la coordenada cae fuera del distrito declarado: para clasificar se usa el UBIGEO y las coordenadas solo para mapas y distancias.
+- **Mapa desactualizado.** El geojson tiene 1,834 polígonos. Los 50 distritos creados después (por ejemplo, Uchuraccay) no tienen polígono ni distancia, pero sí entran en los KPI y en la tabla.
+
+Más detalle en [`docs/metodologia.md`](docs/metodologia.md).
+
+## Cómo reproducir
+
+Se necesita Python 3.10 o superior.
+
+```bash
+pip install -r requirements.txt
+python scripts/obtener_datos.py      # descarga las bases y muestra su SHA-256
+python scripts/procesar_datos.py     # limpieza, cruce, centroides y distancias
+python scripts/analizar_datos.py     # indicadores, pruebas, resultados.json y datos del dashboard
+python scripts/verificar_datos.py    # 32 comprobaciones -> datos/procesados/verificacion.txt
+python scripts/probar_dashboard.py   # 56 pruebas en navegador (playwright install chromium)
+python scripts/verificar_reel.py     # 30 comprobaciones del guion y del video
+```
+
+El reel va en un entorno aparte, porque `qwen-tts` fija `transformers==4.57.3`. Los pasos están en [`reel/README.md`](reel/README.md). La grabación de referencia no está en el repositorio: hace falta una propia.
+
+**Ver el dashboard en local:** `python -m http.server` en la raíz del repositorio y abrir `http://localhost:8000/web/`.
 
 ## Estructura
 
 ```
-Tarea_3/
-├── README.md · requirements.txt · index.html (redirige a web/)
-├── datos/originales/        bases tal como vienen del curso
-├── datos/procesados/        distritos.csv, minas.csv, departamentos.csv, resultados.json, geojson liviano
-├── scripts/                 obtener_datos.py → procesar_datos.py → analizar_datos.py
-├── web/                     index.html (dashboard D3.js) + data/datos.js
-├── reel/                    guion.json, hacer_reel_mineria.py, generar_visuales.py, reel.py (sesión 15),
-│                            recursos/ (imágenes por escena, música CC0, fuentes Inter OFL), reel.mp4, subtitulos.srt
-└── docs/                    capturas del dashboard y texto de LinkedIn
+datos/
+  originales/   bases del curso: Poverty.csv (INEI), MINING.csv (MINEM), GeoJSON
+  procesados/   distritos.csv, minas.csv, departamentos.csv, resultados.json, verificacion.txt
+scripts/        obtener, procesar, analizar y verificar los datos; probar el dashboard; verificar el reel
+docs/           metodologia.md, hallazgos.md, capturas/ (imágenes del dashboard),
+                publicacion/ (textos de LinkedIn, miniatura del reel y comentario de entrega)
+web/            dashboard: index.html (HTML, CSS y D3.js) y data/datos.js
+index.html      redirige a web/ (raíz del sitio de GitHub Pages)
+reel/           guion, imágenes, música, voz con IA, subtítulos y montaje (ver reel/README.md)
 ```
 
-## Cómo reproducir
+## Recursos reutilizados
 
-```bash
-cd Tarea_3
-pip install -r requirements.txt
-python scripts/obtener_datos.py     # descarga las bases (si no están)
-python scripts/procesar_datos.py    # limpieza y cruce
-python scripts/analizar_datos.py    # indicadores, resultados.json y web/data/datos.js
-python -m http.server -d web 8000   # abrir http://localhost:8000
-```
-
-**Publicar el dashboard (GitHub Pages):** Settings → Pages → *Deploy from a branch* → `main` / `/ (root)`. El dashboard queda en https://o-chavx.github.io/Tarea_3/web/ (la raíz redirige ahí).
-
-**Reel** (en el entorno de la sesión 15: `qwen-tts faster-whisper imageio-ffmpeg soundfile jiwer num2words pillow`):
-
-```bash
-cd reel
-python generar_visuales.py                       # imágenes de las escenas
-python recursos/generar_musica.py                # pista de fondo original
-python hacer_reel_mineria.py --vista-previa      # prueba sin voz
-python hacer_reel_mineria.py --voz mi_voz.ogg --tts Qwen/Qwen3-TTS-12Hz-1.7B-Base --velocidad 1.05   # reel final
-```
-
-La grabación de referencia (24.7 s) no se sube al repositorio. `reel/reel.mp4` es la versión final (modelo Qwen3-TTS 1.7B); `reel/reel_v1.mp4` es la primera prueba con el modelo 0.6B.
+- **Bases de datos y límites distritales:** de la sesión 06 del curso.
+- **Flujo del reel:** `reel/reel.py` es el módulo de la sesión 15 del curso, sin cambios. `hacer_reel_mineria.py` lo extiende con imágenes por escena, música y créditos.
+- **Tipografía:** Inter (SIL OFL) en el reel; Archivo, Source Sans 3 e IBM Plex Mono (Google Fonts) en el dashboard.
 
 ## Uso de inteligencia artificial
 
-Usé Claude (Anthropic) para proponer el enfoque, escribir y depurar los scripts de Python, construir el dashboard y redactar el guion del reel. La narración del reel se generó con Qwen3-TTS 1.7B (Alibaba, Apache 2.0) a partir de una grabación de mi propia voz, y Whisper produjo los subtítulos. Revisé que cada cifra del dashboard, el guion y este README coincida con `datos/procesados/resultados.json` y contrasté la fuente de pobreza con publicaciones del INEI. La música de fondo es original, generada con código (CC0).
+Desarrollé este proyecto con **Claude** (Anthropic) como asistente para escribir el código, construir el dashboard, armar el reel, verificar las cifras y redactar la documentación. Elegí el tema y revisé los resultados; soy responsable de ellos.
+
+- **Cifras:** salen de los scripts del repositorio, no del asistente. Su verificación está en `datos/procesados/verificacion.txt`; la del dashboard, en `web/prueba_dashboard.txt`; y la del reel, en `reel/verificacion_reel.txt`.
+- **Voz del reel:** la generó Qwen3-TTS 1.7B (Alibaba, Apache 2.0) a partir de mi propia voz. Whisper (OpenAI, MIT) transcribió la referencia y controló la pronunciación.
+- **Música:** original, generada con código (CC0).
+- **Textos de LinkedIn:** el asistente los propuso; yo los reviso y los publico.
