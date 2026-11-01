@@ -9,7 +9,7 @@ Autor: **Oscar Andres Chavez Inocente**.
 |---|---|
 | Dashboard público | https://o-chavx.github.io/Tarea_3/web/ |
 | Publicación de LinkedIn con el reel | https://lnkd.in/p/dtGPJvpm |
-| Publicación de LinkedIn con capturas del dashboard | *pendiente* |
+| Publicación de LinkedIn con capturas del dashboard | https://lnkd.in/p/dJkMrkVw |
 | Reel (archivo) | [`reel/reel.mp4`](reel/reel.mp4): 51 s, vertical, con voz generada con IA a partir de mi voz |
 | Repositorio | https://github.com/O-Chavx/Tarea_3 |
 
@@ -39,7 +39,7 @@ El proyecto cruza la pobreza monetaria que el INEI estimó para cada distrito co
 | 1. Obtención, procesamiento, análisis y verificación de datos | ✅ Completa: 32 comprobaciones OK |
 | 2. Dashboard público e interactivo | ✅ Publicado en GitHub Pages: 56 pruebas en navegador OK |
 | 3. Reel con IA (guion, voz propia clonada, imágenes, música, subtítulos) | ✅ Terminado: 30 comprobaciones OK ([`reel/`](reel/README.md)) |
-| 4. Publicación en LinkedIn y README final | ⏳ Textos y capturas listos en [`docs/publicacion/`](docs/publicacion/) |
+| 4. Publicación en LinkedIn y README final | ✅ Publicado: reel y capturas del dashboard |
 
 ## Dashboard
 
@@ -198,4 +198,4 @@ Desarrollé este proyecto con **Claude** (Anthropic) como asistente para escribi
 - **Cifras:** salen de los scripts del repositorio, no del asistente. Su verificación está en `datos/procesados/verificacion.txt`; la del dashboard, en `web/prueba_dashboard.txt`; y la del reel, en `reel/verificacion_reel.txt`.
 - **Voz del reel:** la generó Qwen3-TTS 1.7B (Alibaba, Apache 2.0) a partir de mi propia voz. Whisper (OpenAI, MIT) transcribió la referencia y controló la pronunciación.
 - **Música:** original, generada con código (CC0).
-- **Textos de LinkedIn:** el asistente los propuso; yo los reviso y los publico.
+- **Textos de LinkedIn:** el asistente los propuso; yo los revisé y los publiqué.

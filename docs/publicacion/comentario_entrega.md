@@ -10,4 +10,4 @@
 
 **Publicación de LinkedIn — Reel:** https://lnkd.in/p/dtGPJvpm
 
-**Publicación de LinkedIn — Capturas del dashboard:** [ENLACE]
+**Publicación de LinkedIn — Capturas del dashboard:** https://lnkd.in/p/dJkMrkVw
