@@ -9,22 +9,21 @@ Después de publicar, copia el enlace de cada una (menú «…» → «Copiar en
 
 **Adjuntar:** `reel/reel.mp4` · miniatura opcional: `docs/publicacion/miniatura_reel.png`
 
-> ¿Vivir cerca de una mina te hace menos pobre? ⛏️🇵🇪
->
-> Para la Tarea 3 del curso Python Intermedio crucé el Mapa de Pobreza 2018 del INEI (1,873 distritos) con 142 unidades mineras registradas por el MINEM.
->
-> 📉 Los distritos con minas tienen en promedio 26.8 % de pobreza, frente a 34.6 % del resto.
-> 🗺️ Pero dentro del mismo departamento la diferencia baja de 7.8 a 4.4 puntos: buena parte depende de dónde están las minas.
-> ⚠️ Y la mina no garantiza bienestar: 24 distritos mineros superan el 40 % de pobreza; los 8 de Cajamarca promedian 52.9 %.
->
-> Es una asociación, no una prueba de causa.
->
-> 🔗 Dashboard interactivo: https://o-chavx.github.io/Tarea_3/web/
-> 💻 Código, datos y verificación: https://github.com/O-Chavx/Tarea_3
->
-> 🎙️ La voz del video fue generada con IA (Qwen3-TTS) a partir de mi propia voz. Datos: INEI y MINEM. Música original.
->
-> #Peru #Mineria #Pobreza #DataScience #Python #DatosAbiertos
+> ⛏️ ¿Vivir cerca de una mina te hace menos pobre? 🇵🇪
+> Que una región sea minera no dice cuánto bienestar llega a sus distritos. ¿Qué encontramos al comparar los distritos con minas y los que no las tienen?
+> Para mi proyecto de Python Intermedio crucé el Mapa de Pobreza 2018 del INEI (1,873 distritos) con 142 unidades mineras del MINEM, y convertí los resultados en un dashboard interactivo y este reel.
+> Tres hallazgos que quiero compartir:
+> 📍 En promedio, los distritos con minas tienen 26.8 % de pobreza, frente a 34.6 % del resto: 7.8 puntos menos.
+> 🗺️ Pero las minas están en territorios distintos. Al comparar cada distrito con los de su mismo departamento, la brecha baja a 4.4 puntos. Aun así, se mantiene en 18 de 21 departamentos.
+> 🏔️ La pobreza sube al alejarse de una mina: 31.2 % a menos de 25 km y 36.9 % a más de 100 km. Pero la mina no garantiza bienestar: 24 distritos mineros superan el 40 %, y en Cajamarca sus 8 distritos mineros promedian 52.9 %.
+> 🗺️ Explora el dashboard:
+> https://o-chavx.github.io/Tarea_3/web/
+> 💻 Consulta el código, los datos y la metodología:
+> https://github.com/O-Chavx/Tarea_3
+> Fuente: INEI, Mapa de pobreza monetaria 2018, y MINEM. Cálculos propios: promedios simples por distrito, con la brecha también comparada dentro de cada departamento. Es una asociación, no una prueba de causa; el dashboard detalla la metodología y las limitaciones.
+> 🎙️ La narración fue generada con IA mediante Qwen3-TTS a partir de mi propia voz.
+> 🎵 Música: pista original generada con código (licencia CC0). Créditos en el video y en el repositorio.
+> #AnálisisDeDatos #Python #Minería #Pobreza #Perú #DatosAbiertos
 
 ---
 
