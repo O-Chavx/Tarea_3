@@ -1,0 +1,8 @@
+reel/mi_voz*
+reel/narracion.wav
+reel/reel_vista_previa.mp4
+reel/subtitulos_vista_previa.srt
+reel/salidas/
+__pycache__/
+.venv/
+reel/.venv/

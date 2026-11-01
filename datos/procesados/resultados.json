@@ -1,0 +1,604 @@
+{
+  "n_distritos": 1873,
+  "n_minas": 142,
+  "n_distritos_mineros": 109,
+  "n_departamentos_con_minas": 21,
+  "pobreza_media_nacional_distrital": 34.15,
+  "pobreza_media_minero": 26.84,
+  "pobreza_media_no_minero": 34.6,
+  "pobreza_mediana_minero": 24.5,
+  "pobreza_mediana_no_minero": 35.0,
+  "brecha_bruta_pp": -7.76,
+  "pct_pobreza_alta_minero": 22.0,
+  "pct_pobreza_alta_no_minero": 39.1,
+  "n_distritos_pobreza_alta": 713,
+  "mannwhitney_p": 1.03e-06,
+  "brecha_intra_departamento_pp": -4.4,
+  "deps_mineros_menos_pobres": 18,
+  "deps_comparados": 21,
+  "permutacion_p_bilateral": "< 0.0001",
+  "bandas": [
+    {
+      "banda_distancia": "Distrito minero",
+      "distritos": 109,
+      "pobreza_media": 26.84,
+      "pct_pobreza_alta": 22.02
+    },
+    {
+      "banda_distancia": "< 25 km",
+      "distritos": 446,
+      "pobreza_media": 31.18,
+      "pct_pobreza_alta": 30.72
+    },
+    {
+      "banda_distancia": "25–50 km",
+      "distritos": 658,
+      "pobreza_media": 34.74,
+      "pct_pobreza_alta": 37.84
+    },
+    {
+      "banda_distancia": "50–100 km",
+      "distritos": 474,
+      "pobreza_media": 36.42,
+      "pct_pobreza_alta": 42.83
+    },
+    {
+      "banda_distancia": "> 100 km",
+      "distritos": 136,
+      "pobreza_media": 36.9,
+      "pct_pobreza_alta": 54.41
+    }
+  ],
+  "por_metodo": [
+    {
+      "metodo": "Minería subterránea",
+      "unidades": 52,
+      "pobreza_media": 24.15
+    },
+    {
+      "metodo": "Minería no metálica",
+      "unidades": 46,
+      "pobreza_media": 23.48
+    },
+    {
+      "metodo": "Minería superficial",
+      "unidades": 39,
+      "pobreza_media": 31.73
+    },
+    {
+      "metodo": "Refinería",
+      "unidades": 3,
+      "pobreza_media": 8.06
+    },
+    {
+      "metodo": "Fundición",
+      "unidades": 2,
+      "pobreza_media": 6.8
+    }
+  ],
+  "por_mineral": [
+    {
+      "mineral": "Oro (Au)",
+      "unidades": 56,
+      "pobreza_media": 32.0
+    },
+    {
+      "mineral": "Cobre (Cu)",
+      "unidades": 52,
+      "pobreza_media": 20.95
+    },
+    {
+      "mineral": "Plata (Ag)",
+      "unidades": 80,
+      "pobreza_media": 27.12
+    },
+    {
+      "mineral": "Zinc o plomo",
+      "unidades": 48,
+      "pobreza_media": 22.73
+    },
+    {
+      "mineral": "No metálica",
+      "unidades": 46,
+      "pobreza_media": 23.48
+    }
+  ],
+  "departamentos": [
+    {
+      "departamento": "AMAZONAS",
+      "distritos": 84,
+      "pobreza_media": 39.93,
+      "pobreza_mediana": 39.37,
+      "pobreza_max": 62.91,
+      "pobreza_min": 9.04,
+      "distritos_pobreza_alta": 41,
+      "distritos_mineros": 1,
+      "unidades_mineras": 1,
+      "pct_pobreza_alta": 48.81,
+      "brecha_max_min": 53.88,
+      "brecha_pp": -15.61,
+      "pob_mineros": 24.5,
+      "pob_no_mineros": 40.11
+    },
+    {
+      "departamento": "APURÍMAC",
+      "distritos": 84,
+      "pobreza_media": 42.12,
+      "pobreza_mediana": 41.72,
+      "pobreza_max": 58.24,
+      "pobreza_min": 19.73,
+      "distritos_pobreza_alta": 49,
+      "distritos_mineros": 3,
+      "unidades_mineras": 3,
+      "pct_pobreza_alta": 58.33,
+      "brecha_max_min": 38.51,
+      "brecha_pp": -10.3,
+      "pob_mineros": 32.19,
+      "pob_no_mineros": 42.49
+    },
+    {
+      "departamento": "AREQUIPA",
+      "distritos": 109,
+      "pobreza_media": 20.28,
+      "pobreza_mediana": 16.95,
+      "pobreza_max": 52.17,
+      "pobreza_min": 0.34,
+      "distritos_pobreza_alta": 9,
+      "distritos_mineros": 14,
+      "unidades_mineras": 17,
+      "pct_pobreza_alta": 8.26,
+      "brecha_max_min": 51.83,
+      "brecha_pp": 0.77,
+      "pob_mineros": 20.96,
+      "pob_no_mineros": 20.18
+    },
+    {
+      "departamento": "AYACUCHO",
+      "distritos": 119,
+      "pobreza_media": 44.96,
+      "pobreza_mediana": 44.95,
+      "pobreza_max": 81.26,
+      "pobreza_min": 13.24,
+      "distritos_pobreza_alta": 75,
+      "distritos_mineros": 4,
+      "unidades_mineras": 4,
+      "pct_pobreza_alta": 63.02,
+      "brecha_max_min": 68.02,
+      "brecha_pp": -5.14,
+      "pob_mineros": 40.0,
+      "pob_no_mineros": 45.14
+    },
+    {
+      "departamento": "CAJAMARCA",
+      "distritos": 127,
+      "pobreza_media": 58.39,
+      "pobreza_mediana": 59.85,
+      "pobreza_max": 81.0,
+      "pobreza_min": 19.75,
+      "distritos_pobreza_alta": 115,
+      "distritos_mineros": 8,
+      "unidades_mineras": 9,
+      "pct_pobreza_alta": 90.55,
+      "brecha_max_min": 61.25,
+      "brecha_pp": -5.86,
+      "pob_mineros": 52.89,
+      "pob_no_mineros": 58.76
+    },
+    {
+      "departamento": "CALLAO",
+      "distritos": 7,
+      "pobreza_media": 12.23,
+      "pobreza_mediana": 11.84,
+      "pobreza_max": 26.07,
+      "pobreza_min": 1.94,
+      "distritos_pobreza_alta": 0,
+      "distritos_mineros": 0,
+      "unidades_mineras": 0,
+      "pct_pobreza_alta": 0.0,
+      "brecha_max_min": 24.12,
+      "brecha_pp": NaN,
+      "pob_mineros": NaN,
+      "pob_no_mineros": NaN
+    },
+    {
+      "departamento": "CUSCO",
+      "distritos": 112,
+      "pobreza_media": 34.89,
+      "pobreza_mediana": 35.75,
+      "pobreza_max": 61.46,
+      "pobreza_min": 1.38,
+      "distritos_pobreza_alta": 41,
+      "distritos_mineros": 4,
+      "unidades_mineras": 4,
+      "pct_pobreza_alta": 36.61,
+      "brecha_max_min": 60.08,
+      "brecha_pp": 5.69,
+      "pob_mineros": 40.38,
+      "pob_no_mineros": 34.68
+    },
+    {
+      "departamento": "HUANCAVELICA",
+      "distritos": 100,
+      "pobreza_media": 39.13,
+      "pobreza_mediana": 39.09,
+      "pobreza_max": 77.12,
+      "pobreza_min": 13.47,
+      "distritos_pobreza_alta": 48,
+      "distritos_mineros": 4,
+      "unidades_mineras": 4,
+      "pct_pobreza_alta": 48.0,
+      "brecha_max_min": 63.66,
+      "brecha_pp": -2.57,
+      "pob_mineros": 36.66,
+      "pob_no_mineros": 39.23
+    },
+    {
+      "departamento": "HUÁNUCO",
+      "distritos": 84,
+      "pobreza_media": 37.0,
+      "pobreza_mediana": 38.03,
+      "pobreza_max": 63.62,
+      "pobreza_min": 10.16,
+      "distritos_pobreza_alta": 38,
+      "distritos_mineros": 2,
+      "unidades_mineras": 2,
+      "pct_pobreza_alta": 45.24,
+      "brecha_max_min": 53.46,
+      "brecha_pp": 5.59,
+      "pob_mineros": 42.45,
+      "pob_no_mineros": 36.87
+    },
+    {
+      "departamento": "ICA",
+      "distritos": 43,
+      "pobreza_media": 4.73,
+      "pobreza_mediana": 3.66,
+      "pobreza_max": 30.08,
+      "pobreza_min": 0.7,
+      "distritos_pobreza_alta": 0,
+      "distritos_mineros": 4,
+      "unidades_mineras": 7,
+      "pct_pobreza_alta": 0.0,
+      "brecha_max_min": 29.38,
+      "brecha_pp": -0.84,
+      "pob_mineros": 3.96,
+      "pob_no_mineros": 4.81
+    },
+    {
+      "departamento": "JUNÍN",
+      "distritos": 124,
+      "pobreza_media": 26.42,
+      "pobreza_mediana": 24.87,
+      "pobreza_max": 51.78,
+      "pobreza_min": 4.27,
+      "distritos_pobreza_alta": 11,
+      "distritos_mineros": 11,
+      "unidades_mineras": 22,
+      "pct_pobreza_alta": 8.87,
+      "brecha_max_min": 47.51,
+      "brecha_pp": -8.36,
+      "pob_mineros": 18.8,
+      "pob_no_mineros": 27.16
+    },
+    {
+      "departamento": "LA LIBERTAD",
+      "distritos": 83,
+      "pobreza_media": 41.57,
+      "pobreza_mediana": 44.45,
+      "pobreza_max": 69.7,
+      "pobreza_min": 4.99,
+      "distritos_pobreza_alta": 46,
+      "distritos_mineros": 8,
+      "unidades_mineras": 11,
+      "pct_pobreza_alta": 55.42,
+      "brecha_max_min": 64.71,
+      "brecha_pp": -1.54,
+      "pob_mineros": 40.17,
+      "pob_no_mineros": 41.72
+    },
+    {
+      "departamento": "LAMBAYEQUE",
+      "distritos": 38,
+      "pobreza_media": 21.22,
+      "pobreza_mediana": 18.26,
+      "pobreza_max": 62.55,
+      "pobreza_min": 7.49,
+      "distritos_pobreza_alta": 3,
+      "distritos_mineros": 1,
+      "unidades_mineras": 1,
+      "pct_pobreza_alta": 7.9,
+      "brecha_max_min": 55.06,
+      "brecha_pp": -4.94,
+      "pob_mineros": 16.41,
+      "pob_no_mineros": 21.35
+    },
+    {
+      "departamento": "LIMA",
+      "distritos": 170,
+      "pobreza_media": 17.51,
+      "pobreza_mediana": 17.25,
+      "pobreza_max": 51.73,
+      "pobreza_min": 0.06,
+      "distritos_pobreza_alta": 2,
+      "distritos_mineros": 16,
+      "unidades_mineras": 19,
+      "pct_pobreza_alta": 1.18,
+      "brecha_max_min": 51.67,
+      "brecha_pp": -1.12,
+      "pob_mineros": 16.5,
+      "pob_no_mineros": 17.62
+    },
+    {
+      "departamento": "LORETO",
+      "distritos": 53,
+      "pobreza_media": 43.94,
+      "pobreza_mediana": 47.9,
+      "pobreza_max": 60.89,
+      "pobreza_min": 8.63,
+      "distritos_pobreza_alta": 39,
+      "distritos_mineros": 0,
+      "unidades_mineras": 0,
+      "pct_pobreza_alta": 73.58,
+      "brecha_max_min": 52.26,
+      "brecha_pp": NaN,
+      "pob_mineros": NaN,
+      "pob_no_mineros": NaN
+    },
+    {
+      "departamento": "MADRE DE DIOS",
+      "distritos": 11,
+      "pobreza_media": 6.8,
+      "pobreza_mediana": 5.69,
+      "pobreza_max": 16.92,
+      "pobreza_min": 1.92,
+      "distritos_pobreza_alta": 0,
+      "distritos_mineros": 0,
+      "unidades_mineras": 0,
+      "pct_pobreza_alta": 0.0,
+      "brecha_max_min": 15.0,
+      "brecha_pp": NaN,
+      "pob_mineros": NaN,
+      "pob_no_mineros": NaN
+    },
+    {
+      "departamento": "MOQUEGUA",
+      "distritos": 20,
+      "pobreza_media": 17.88,
+      "pobreza_mediana": 17.08,
+      "pobreza_max": 39.93,
+      "pobreza_min": 1.03,
+      "distritos_pobreza_alta": 0,
+      "distritos_mineros": 4,
+      "unidades_mineras": 5,
+      "pct_pobreza_alta": 0.0,
+      "brecha_max_min": 38.9,
+      "brecha_pp": -6.53,
+      "pob_mineros": 12.66,
+      "pob_no_mineros": 19.18
+    },
+    {
+      "departamento": "PASCO",
+      "distritos": 29,
+      "pobreza_media": 40.15,
+      "pobreza_mediana": 44.67,
+      "pobreza_max": 72.15,
+      "pobreza_min": 18.66,
+      "distritos_pobreza_alta": 15,
+      "distritos_mineros": 5,
+      "unidades_mineras": 7,
+      "pct_pobreza_alta": 51.72,
+      "brecha_max_min": 53.49,
+      "brecha_pp": -16.06,
+      "pob_mineros": 26.86,
+      "pob_no_mineros": 42.92
+    },
+    {
+      "departamento": "PIURA",
+      "distritos": 65,
+      "pobreza_media": 34.73,
+      "pobreza_mediana": 33.41,
+      "pobreza_max": 68.03,
+      "pobreza_min": 8.57,
+      "distritos_pobreza_alta": 24,
+      "distritos_mineros": 3,
+      "unidades_mineras": 6,
+      "pct_pobreza_alta": 36.92,
+      "brecha_max_min": 59.46,
+      "brecha_pp": -12.15,
+      "pob_mineros": 23.14,
+      "pob_no_mineros": 35.29
+    },
+    {
+      "departamento": "PUNO",
+      "distritos": 110,
+      "pobreza_media": 44.24,
+      "pobreza_mediana": 44.33,
+      "pobreza_max": 67.82,
+      "pobreza_min": 12.83,
+      "distritos_pobreza_alta": 76,
+      "distritos_mineros": 5,
+      "unidades_mineras": 7,
+      "pct_pobreza_alta": 69.09,
+      "brecha_max_min": 54.99,
+      "brecha_pp": -4.43,
+      "pob_mineros": 40.01,
+      "pob_no_mineros": 44.44
+    },
+    {
+      "departamento": "SAN MARTÍN",
+      "distritos": 77,
+      "pobreza_media": 27.24,
+      "pobreza_mediana": 26.4,
+      "pobreza_max": 55.39,
+      "pobreza_min": 6.44,
+      "distritos_pobreza_alta": 7,
+      "distritos_mineros": 3,
+      "unidades_mineras": 3,
+      "pct_pobreza_alta": 9.09,
+      "brecha_max_min": 48.95,
+      "brecha_pp": -5.83,
+      "pob_mineros": 21.63,
+      "pob_no_mineros": 27.46
+    },
+    {
+      "departamento": "TACNA",
+      "distritos": 28,
+      "pobreza_media": 20.32,
+      "pobreza_mediana": 21.93,
+      "pobreza_max": 36.59,
+      "pobreza_min": 5.54,
+      "distritos_pobreza_alta": 0,
+      "distritos_mineros": 2,
+      "unidades_mineras": 2,
+      "pct_pobreza_alta": 0.0,
+      "brecha_max_min": 31.05,
+      "brecha_pp": -0.49,
+      "pob_mineros": 19.87,
+      "pob_no_mineros": 20.36
+    },
+    {
+      "departamento": "TUMBES",
+      "distritos": 13,
+      "pobreza_media": 11.46,
+      "pobreza_mediana": 10.64,
+      "pobreza_max": 19.84,
+      "pobreza_min": 8.71,
+      "distritos_pobreza_alta": 0,
+      "distritos_mineros": 1,
+      "unidades_mineras": 1,
+      "pct_pobreza_alta": 0.0,
+      "brecha_max_min": 11.13,
+      "brecha_pp": -0.24,
+      "pob_mineros": 11.23,
+      "pob_no_mineros": 11.48
+    },
+    {
+      "departamento": "UCAYALI",
+      "distritos": 17,
+      "pobreza_media": 20.49,
+      "pobreza_mediana": 12.9,
+      "pobreza_max": 52.64,
+      "pobreza_min": 6.23,
+      "distritos_pobreza_alta": 1,
+      "distritos_mineros": 0,
+      "unidades_mineras": 0,
+      "pct_pobreza_alta": 5.88,
+      "brecha_max_min": 46.41,
+      "brecha_pp": NaN,
+      "pob_mineros": NaN,
+      "pob_no_mineros": NaN
+    },
+    {
+      "departamento": "ÁNCASH",
+      "distritos": 166,
+      "pobreza_media": 37.08,
+      "pobreza_mediana": 36.04,
+      "pobreza_max": 68.22,
+      "pobreza_min": 9.91,
+      "distritos_pobreza_alta": 73,
+      "distritos_mineros": 6,
+      "unidades_mineras": 7,
+      "pct_pobreza_alta": 43.98,
+      "brecha_max_min": 58.32,
+      "brecha_pp": -14.22,
+      "pob_mineros": 23.38,
+      "pob_no_mineros": 37.6
+    }
+  ],
+  "dep_mas_minas": {
+    "departamento": "JUNÍN",
+    "unidades": 22
+  },
+  "dep_mayor_pobreza_media": {
+    "departamento": "CAJAMARCA",
+    "pobreza_media": 58.386
+  },
+  "mineros_mas_pobres": [
+    {
+      "departamento": "CAJAMARCA",
+      "distrito": "CACHACHI",
+      "pobreza": 76.9,
+      "n_minas": 1,
+      "minerales": "Ag, Au"
+    },
+    {
+      "departamento": "CAJAMARCA",
+      "distrito": "ENCAÑADA",
+      "pobreza": 74.9,
+      "n_minas": 2,
+      "minerales": "Ag, Au, Caliza"
+    },
+    {
+      "departamento": "CAJAMARCA",
+      "distrito": "CALQUIS",
+      "pobreza": 66.2,
+      "n_minas": 1,
+      "minerales": "Ag, Au"
+    },
+    {
+      "departamento": "CAJAMARCA",
+      "distrito": "CATILLUC",
+      "pobreza": 60.1,
+      "n_minas": 1,
+      "minerales": "Ag, Au"
+    },
+    {
+      "departamento": "LA LIBERTAD",
+      "distrito": "USQUIL",
+      "pobreza": 55.8,
+      "n_minas": 1,
+      "minerales": "Ag, Au"
+    }
+  ],
+  "mineros_menos_pobres": [
+    {
+      "departamento": "MOQUEGUA",
+      "distrito": "PACOCHA",
+      "pobreza": 1.0,
+      "n_minas": 2,
+      "minerales": "Ag, Au, Cu"
+    },
+    {
+      "departamento": "ICA",
+      "distrito": "MARCONA",
+      "pobreza": 2.2,
+      "n_minas": 2,
+      "minerales": "Cu, Fe, Pb, Zn"
+    },
+    {
+      "departamento": "ICA",
+      "distrito": "VISTA ALEGRE",
+      "pobreza": 3.9,
+      "n_minas": 2,
+      "minerales": "Ag, Au, Cu, Pb, Zn"
+    },
+    {
+      "departamento": "JUNÍN",
+      "distrito": "YAULI",
+      "pobreza": 4.3,
+      "n_minas": 6,
+      "minerales": "Ag, Caliza, Cu, Pb, Zn"
+    },
+    {
+      "departamento": "ICA",
+      "distrito": "SAN CLEMENTE",
+      "pobreza": 4.8,
+      "n_minas": 1,
+      "minerales": "Yeso"
+    }
+  ],
+  "mineros_pobreza_alta": 24,
+  "cajamarca": {
+    "distritos": 127,
+    "pobreza_media": 58.4,
+    "mineros": 8,
+    "pob_mineros": 52.9,
+    "en_top20_pobres": 16
+  },
+  "minas_fuera_de_su_distrito": 33,
+  "distritos_sin_poligono": 50,
+  "spearman_nminas_pobreza": {
+    "rho": -0.126,
+    "p": 0.192
+  }
+}

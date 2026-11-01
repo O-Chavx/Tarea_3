@@ -1,0 +1,143 @@
+ubigeo,departamento,distrito,unidad,titular,metodo,tipo,mineral_principal,productos,oro,cobre,plata,zinc_plomo,lon,lat,dentro_de_su_distrito,pobreza
+020201,ÁNCASH,AIJA,HUANCAPETI,COMPAÑIA MINERA LINCUNA S.A,Minería subterránea,Metálica,Oro,"As, Bi, Mn, Pb, Zn, Au, Ag",True,False,True,True,-77.5310,-9.7530,True,20.7438
+220902,SAN MARTÍN,ALBERTO LEVEAU,SALINAS PILLUANA,QUIMPAC S.A.,Minería no metálica,No metálica,No metálico,Sal,False,False,False,False,-76.2670,-6.7420,False,20.1396
+200502,PIURA,AMOTAPE,CERRO BLANCO,COMPAÑIA MINERA AGREGADOS CALCAREOS S.A.,Minería no metálica,No metálica,No metálico,Bentonita,False,False,False,False,-81.0270,-4.8360,True,23.0572
+210802,PUNO,ANTAUTA,QUENAMARI-SAN RAFAEL,MINSUR S.A.,Minería subterránea,Metálica,Estaño,Sn,False,False,False,False,-70.4916,-14.1335,False,40.6769
+150502,LIMA,ASIA,PROMESA 345,COMPAÑIA MINERA LAS CAMELIAS S.A.,Minería no metálica,No metálica,No metálico,Arcillas,False,False,False,False,-76.5305,-12.7365,True,11.0737
+010701,AMAZONAS,BAGUA GRANDE,FILA LARGA 98,CEMENTOS SELVA S.A.,Minería no metálica,No metálica,No metálico,Puzolana,False,False,False,False,-78.5580,-5.7160,True,24.5030
+060202,CAJAMARCA,CACHACHI,SHAHUINDO,SHAHUINDO S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-78.1960,-7.6040,True,76.8569
+131003,LA LIBERTAD,CACHICADAN,LA VIRGEN,COMPAÑIA MINERA SAN SIMON S.A.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-78.0581,-7.9753,True,45.0912
+060101,CAJAMARCA,CAJAMARCA,CHAUPILOMA SUR,MINERA YANACOCHA S.R.L.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-78.5137,-6.9912,False,19.7487
+040504,AREQUIPA,CALLALLI,CALQUIPA,CALQUIPA S.A.C.,Minería no metálica,No metálica,No metálico,Caliza,False,False,False,False,-71.3370,-15.4420,True,29.5672
+061103,CAJAMARCA,CALQUIS,LA ZANJA,MINERA LA ZANJA S.R.L.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-78.9110,-6.8486,True,66.2175
+051005,AYACUCHO,CANARIA,CATALINA HUANCA,CATALINA HUANCA SOCIEDAD MINERA S.A.C.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Au, Ag",True,True,True,True,-73.9352,-13.9820,True,50.8563
+150106,LIMA,CARABAYLLO,"COMICSA 5, 6 Y 7",COMPAÑIA MINERA LAS CAMELIAS S.A.,Minería no metálica,No metálica,No metálico,Arcillas,False,False,False,False,-77.0372,-11.8153,True,19.1760
+150106,LIMA,CARABAYLLO,YERBA BUENA,UNION DE CONCRETERAS S.A.,Minería no metálica,No metálica,No metálico,Hormigón,False,False,False,False,-76.9317,-11.7856,True,19.1760
+211104,PUNO,CARACOTO,PUNO,CAL & CEMENTO SUR S.A.,Minería no metálica,No metálica,No metálico,Calcita,False,False,False,False,-70.1365,-15.6099,True,34.5656
+180102,MOQUEGUA,CARUMAS,TUCARI,ARUNTANI S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-70.1000,-16.6420,False,26.4608
+061104,CAJAMARCA,CATILLUC,TANTAHUATAY,COMPAÑIA MINERA COIMOLACHE S.A.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-78.7000,-6.7380,False,60.1119
+040603,AREQUIPA,CAYARANI,GRAN ARCATA,COMPAÑIA MINERA ARES S.A.C.,Minería subterránea,Metálica,Oro,"Au, Ag, Pb, Zn",True,False,True,True,-72.3290,-14.9920,True,42.8894
+040505,AREQUIPA,CAYLLOMA,EL SANTO,BREXIA GOLDPLATA PERU S.A.C.,Minería subterránea,Metálica,Oro,"Pb, Zn, Au, Ag",True,False,True,True,-71.4942,-15.4451,False,40.7619
+040505,AREQUIPA,CAYLLOMA,SAN CRISTOBAL,MINERA BATEAS S.A.C.,Minería superficial,Metálica,Cobre,"Cu, Mn, Pb, Zn, Au, Ag",True,True,True,True,-71.8562,-15.1646,True,40.7619
+090304,HUANCAVELICA,CCOCHACCASA,JULCANI,COMPAÑÍA DE MINAS BUENAVENTURA S.A.A.,Minería subterránea,Metálica,Cobre,"As, Cu, Pb, Au, Ag",True,True,True,True,-74.8106,-12.9464,True,44.4416
+040307,AREQUIPA,CHALA,BELEN,MINERA TITAN DEL PERU S.R.L.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Au, Ag",True,True,True,True,-74.2449,-15.8263,True,11.9225
+040307,AREQUIPA,CHALA,VETA DORADA,MINERA VETA DORADA S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-74.2480,-15.8030,True,11.9225
+030506,APURÍMAC,CHALLHUAHUACHO,LAS BAMBAS,MINERA LAS BAMBAS S.A.,Minería superficial,Metálica,Cobre,"Cu, Mo",False,True,False,False,-72.2790,-14.0900,True,39.0092
+040308,AREQUIPA,CHAPARRA,DOBLE D,MINERA COLIBRI S.A.C.,Minería subterránea,Metálica,Oro,Au,True,False,False,False,-73.8648,-15.7415,True,11.2200
+040308,AREQUIPA,CHAPARRA,CERRO LINDO,NEXA RESOURCES PERU S.A.A.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Pb, Cu",False,True,True,True,-75.9785,-13.0798,False,11.2200
+050605,AYACUCHO,CHAVIÑA,APUMAYO,APUMAYO S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-73.9234,-14.9569,True,32.4460
+150705,LIMA,CHICLA,YAULIYACU,EMPRESA MINERA LOS QUENUALES S.A.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Pb, Cu",False,True,True,True,-76.2620,-11.6800,True,24.6039
+150505,LIMA,CHILCA,CHILCA,ROCA FUERTE INVERSIONES INMOBILIARIAS S.A.C.,Minería no metálica,No metálica,No metálico,"Caliza, Dolomita",False,False,False,False,-76.5905,-12.5630,False,15.1256
+100103,HUÁNUCO,CHINCHAO,PEDREGAL,COMPAÑIA MINERA AGREGADOS CALCAREOS S.A.,Minería no metálica,No metálica,No metálico,Silicatos,False,False,False,False,-76.1010,-9.7600,True,41.2457
+120108,JUNÍN,CHONGOS ALTO,CORIHUARMI,MINERA IRL S.A.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-75.5629,-12.5704,True,20.0470
+120108,JUNÍN,CHONGOS ALTO,LOS HERALDOS NEGROS,COMPAÑIA MINERA SAN VALENTIN S.A.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-75.2470,-12.6270,False,20.0470
+050702,AYACUCHO,CHUMPI,BREAPAMPA,SOUTH AMERICA MINING INVESTMENTS S.A.C,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-73.6881,-15.0554,True,37.0103
+150506,LIMA,COAYLLO,CONDESTABLE,COMPAÑIA MINERA CONDESTABLE S.A.,Minería subterránea,Metálica,Cobre,"Cu, Au, Ag",True,True,True,False,-76.5905,-12.6046,False,13.1316
+120112,JUNÍN,COLCA,SANTA MARIA I 2008,CINSA MINERA VIRGEN DE GUADALUPE S.A.,Minería no metálica,No metálica,No metálico,Puzolana,False,False,False,False,-75.1580,-12.3290,True,38.5640
+030406,APURÍMAC,COTARUSE,EL EXPLORADOR,COMPAÑIA MINERA ARES S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-73.1320,-14.6590,True,32.0685
+120406,JUNÍN,CURICACA,CHACAPALPA,MARMOLES Y GRANITOS S.A.,Minería no metálica,No metálica,No metálico,Travertino,False,False,False,False,-75.4501,-11.4314,False,21.9333
+060105,CAJAMARCA,ENCAÑADA,CHAUPILOMA NORTE,MINERA YANACOCHA S.R.L.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-78.5213,-6.9892,False,74.9096
+060105,CAJAMARCA,ENCAÑADA,CHINA LINDA,MINERA YANACOCHA S.R.L.,Minería no metálica,No metálica,No metálico,Caliza,False,False,False,False,-78.4710,-6.9270,True,74.9096
+080801,CUSCO,ESPINAR,ANTAPACCAY 1,COMPAÑIA MINERA ANTAPACCAY S.A.,Minería superficial,Metálica,Cobre,"Cu, Au, Ag",True,True,True,False,-71.3862,-14.9639,True,25.8699
+131203,LA LIBERTAD,GUADALUPITO,ADOLFO,MINERA ADOLFO MAX S.R.L.,Minería no metálica,No metálica,No metálico,Sal,False,False,False,False,-78.6300,-8.8800,True,45.3311
+021007,ÁNCASH,HUACHIS,CONTONGA,NYRSTAR ANCASH S.A.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-77.0681,-9.4995,False,28.4765
+150801,LIMA,HUACHO,QUIMPAC,QUIMPAC S.A.,Minería no metálica,No metálica,No metálico,Sal,False,False,False,False,-77.5611,-11.2798,True,6.9859
+090106,HUANCAVELICA,HUACHOCOLPA,HUACHOCOLPA,COMPAÑIA MINERA KOLPA S.A.,Minería subterránea,Metálica,Cobre,"Pb, Zn, Ag, Cu",False,True,True,True,-74.9844,-13.0695,True,40.0506
+060703,CAJAMARCA,HUALGAYOC,CERRO CORONA,GOLD FIELDS LA CIMA S.A.,Minería superficial,Metálica,Cobre,"Cu, Au",True,True,False,False,-78.6256,-6.7604,True,50.2269
+020508,ÁNCASH,HUALLANCA,EL RECUERDO,COMPAÑIA MINERA SANTA LUISA S.A.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-77.0401,-9.8239,True,28.5676
+020508,ÁNCASH,HUALLANCA,SANTA LUISA,COMPAÑIA MINERA SANTA LUISA S.A.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-77.0004,-9.8781,True,28.5676
+130901,LA LIBERTAD,HUAMACHUCO,LA ARENA,LA ARENA S.A.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-78.1354,-7.8956,True,34.4224
+040309,AREQUIPA,HUANUHUANU,CHACCHUILLE,COMPAÑIA MINERA CARAVELI S.A.C.,Minería subterránea,Metálica,Oro,"Au, Ag",True,False,True,False,-74.0760,-15.6440,True,14.3245
+030303,APURÍMAC,HUAQUIRCA,ANAMA,ANABI S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-72.4453,-14.1954,False,25.4892
+150601,LIMA,HUARAL,MARIA TERESA,MINERA COLQUISIRI S.A.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Cu, Pb",False,True,True,True,-77.2790,-11.4930,False,10.2028
+120803,JUNÍN,HUAY-HUAY,ANDAYCHAGUA,VOLCAN COMPAÑÍA MINERA S.A.A.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Pb, Cu",False,True,True,True,-76.0267,-11.7928,False,13.6195
+190104,PASCO,HUAYLLAY,ANIMON,COMPAÑIA MINERA CHUNGAR S.A.C.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Cu, Pb",False,True,True,True,-76.4317,-11.0290,True,22.7993
+190104,PASCO,HUAYLLAY,HUARON (FRANCOIS),PAN AMERICAN SILVER HUARON S.A.,Minería subterránea,Metálica,Cobre,"Pb, Zn, Au, Ag, Cu",True,True,True,True,-76.4283,-11.0079,True,22.7993
+230302,TACNA,ILABAYA,TOQUEPALA,SOUTHERN PERU COPPER CORPORATION SUCURSAL DEL PERU,Minería superficial,Metálica,Cobre,"Cu, Mo, Au, Ag",True,True,True,False,-70.6147,-17.2435,True,5.5395
+020105,ÁNCASH,INDEPENDENCIA,MISQUICHILCA,MINERA BARRICK MISQUICHILCA S.A.,Minería subterránea,Metálica,Oro,"Au, Ag",True,False,True,False,-77.5990,-9.4620,True,11.5377
+120801,JUNÍN,LA OROYA,C.M.LA OROYA-REFINACION 1 Y 2,DOE RUN PERU S.R.L. EN LIQUIDACION EN MARCHA,Fundición,Metálica,Cobre,"Cu, Pb, Zn",False,True,False,True,-75.9330,-11.5260,False,12.5755
+120705,JUNÍN,LA UNIÓN,ANDINO A DE HUANCAYO,UNION ANDINA DE CEMENTOS S.A.A.,Minería no metálica,No metálica,No metálico,"Caliza, Puzolana, Silice, Yeso",False,False,False,False,-75.8134,-11.3749,True,26.8491
+120705,JUNÍN,LA UNIÓN,SILICAL,COMPAÑIA MINERA AGREGADOS CALCAREOS S.A.,Minería no metálica,No metálica,No metálico,"Caliza, Pirofilita",False,False,False,False,-75.0450,-11.3690,False,26.8491
+120705,JUNÍN,LA UNIÓN,TAPADA,TRANSPORTES Y MINERALES LOPEZ S.A.,Minería no metálica,No metálica,No metálico,Arcillas,False,False,False,False,-75.8280,-11.3710,True,26.8491
+151018,LIMA,LARAOS,YAURICOCHA,SOCIEDAD MINERA CORONA S.A.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Cu, Pb",False,True,True,True,-75.7042,-12.3292,False,18.0819
+131102,LA LIBERTAD,LUCMA,AGAUCU,LA ESTRELLA TRADING Y LOGISTICA S.A.C.,Minería no metálica,No metálica,No metálico,Carbón,False,False,False,False,-78.5600,-7.6330,True,51.6531
+150118,LIMA,LURIGANCHO,REFINERIA DE CAJAMARQUILLA,VOTORANTIM METAIS - CAJAMARQUILLA S.A.,Refinería,Metálica,Cobre,"Cd, Cu, Zn, Ag",False,True,True,True,-76.8818,-11.9669,True,18.2342
+150119,LIMA,LURÍN,CONCREMAX,CONCREMAX S.A.,Minería no metálica,No metálica,No metálico,Hormigón,False,False,False,False,-76.4317,-12.4359,False,18.2645
+140204,LAMBAYEQUE,MANUEL ANTONIO MESONES MURO,LAS TRES TOMAS,PLANTA CHANCADORA PIEDRA AZUL SRL,Minería no metálica,No metálica,No metálico,"Arcilla, piedra y arena (construcción)",False,False,False,False,-79.7180,-6.6290,True,16.4073
+120804,JUNÍN,MARCAPOMACOCHA,LA MONA,COMPAÑIA MINERA LAFAYETTE S.A.,Minería no metálica,No metálica,No metálico,Caliza,False,False,False,False,-76.1800,-11.2450,True,20.4769
+110304,ICA,MARCONA,MARCONA,SHOUGANG HIERRO PERU S.A.A.,Minería superficial,Metálica,Hierro,Fe,False,False,False,False,-75.2229,-15.2697,True,2.2431
+110304,ICA,MARCONA,SHOUXIN,MINERA SHOUXIN PERU S.A.,Minería superficial,Metálica,Cobre,"Cu, Fe, Pb, Zn",False,True,False,True,-75.1246,-15.2026,True,2.2431
+120805,JUNÍN,MOROCOCHA,AUSTRIA DUVAZ,SOCIEDAD MINERA AUSTRIA DUVAZ S.A.C.,Minería subterránea,Metálica,Cobre,"Pb, Zn, Ag, Cu",False,True,True,True,-76.1469,-11.5967,True,14.2386
+120805,JUNÍN,MOROCOCHA,MOROCOCHA,COMPAÑIA MINERA ARGENTUM S.A.,Minería subterránea,Metálica,Cobre,"Pb, Zn, Ag, Cu",False,True,True,True,-76.1020,-11.6270,False,14.2386
+120805,JUNÍN,MOROCOCHA,TICLIO,VOLCAN COMPAÑÍA MINERA S.A.A.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-76.1861,-11.5700,True,14.2386
+120805,JUNÍN,MOROCOCHA,TOROMOCHO,MINERA CHINALCO PERU S.A.,Minería superficial,Metálica,Cobre,"Cu, Mo, Zn, Ag, As",False,True,True,True,-76.1440,-11.6071,True,14.2386
+220101,SAN MARTÍN,MOYOBAMBA,INDUSTRIA YESERA MOYOBAMBA,INDUSTRIA YESERA MOYOBAMBA EIRL,Minería no metálica,No metálica,No metálico,Yeso,False,False,False,False,-77.0170,-6.0640,True,16.3396
+220804,SAN MARTÍN,NUEVA CAJAMARCA,RIOJA,CEMENTOS SELVA S.A.,Minería no metálica,No metálica,No metálico,"Arcillas, Calcita, Caliza",False,False,False,False,-77.3224,-5.9507,True,28.4142
+090606,HUANCAVELICA,OCOYO,PLANTA ANTAPITE,SIERRA ANTAPITE S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-75.0700,-13.8820,False,26.5855
+210705,PUNO,OCUVIRI,ANDRES,ARUNTANI S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-70.8421,-15.2776,True,31.7377
+210705,PUNO,OCUVIRI,LAS AGUILAS,CONSORCIO DE INGENIEROS EJECUTORES MINEROS S.A.,Minería superficial,Metálica,Oro,"Pb, Zn, Au, Ag",True,False,True,True,-70.7773,-15.0935,True,31.7377
+040409,AREQUIPA,ORCOPAMPA,ORCOPAMPA,COMPAÑÍA DE MINAS BUENAVENTURA S.A.A.,Minería subterránea,Metálica,Oro,"Au, Ag",True,False,True,False,-72.3516,-15.2726,True,15.6963
+050806,AYACUCHO,OYOLO,NMACULADA,COMPAÑIA MINERA ARES S.A.C.,Minería subterránea,Metálica,Oro,"Au, Ag",True,False,True,False,-73.1800,-14.7860,False,39.6857
+150901,LIMA,OYÓN,ATALAYA,MINING ATALAYA S.A.C.,Minería no metálica,No metálica,No metálico,Carbón,False,False,False,False,-76.8010,-10.5700,True,22.0842
+150901,LIMA,OYÓN,ISCAYCRUZ,EMPRESA MINERA LOS QUENUALES S.A.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-76.7250,-10.8370,True,22.0842
+150901,LIMA,OYÓN,UCHUCCHACUA,COMPAÑÍA DE MINAS BUENAVENTURA S.A.A.,Minería subterránea,Metálica,Zinc,"Pb, Zn, Ag",False,False,True,True,-76.6755,-10.6168,False,22.0842
+150123,LIMA,PACHACÁMAC,PUCARA,UNION ANDINA DE CEMENTOS S.A.A.,Minería no metálica,No metálica,No metálico,Caliza,False,False,False,False,-76.8159,-12.1930,True,20.0009
+180303,MOQUEGUA,PACOCHA,LA FUNDICION,SOUTHERN PERU COPPER CORPORATION SUCURSAL DEL PERU,Fundición,Metálica,Cobre,Cu,False,True,False,False,-71.3540,-17.5840,True,1.0300
+180303,MOQUEGUA,PACOCHA,REF.DE COBRE - ILO,SOUTHERN PERU COPPER CORPORATION SUCURSAL DEL PERU,Refinería,Metálica,Cobre,"Cu, Au, Ag",True,True,True,False,-71.3540,-17.5840,True,1.0300
+200501,PIURA,PAITA,LUCITA,ANDALUCITA S.A.,Minería no metálica,No metálica,No metálico,Andalucita,False,False,False,False,-81.0620,-5.2480,True,20.5606
+230107,TACNA,PALCA,PUCAMARCA,MINSUR S.A.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-69.8134,-17.8189,True,34.1953
+110505,ICA,PARACAS,FUNSUR,MINSUR S.A.,Refinería,Metálica,Estaño,Sn,False,False,False,False,-76.1741,-13.7800,True,4.9266
+110505,ICA,PARACAS,SALINAS DE OTUMA,QUIMPAC S.A.,Minería no metálica,No metálica,No metálico,Sal,False,False,False,False,-76.2342,-14.0051,True,4.9266
+130808,LA LIBERTAD,PARCOY,LOS ZAMBOS,CONSORCIO MINERO HORIZONTE S.A.,Minería subterránea,Metálica,Oro,Au,True,False,False,False,-77.2933,-7.5843,False,32.5805
+130808,LA LIBERTAD,PARCOY,PARCOY,CONSORCIO MINERO HORIZONTE S.A.,Minería subterránea,Metálica,Oro,Au,True,False,False,False,-77.5572,-8.0336,False,32.5805
+130808,LA LIBERTAD,PARCOY,ANDRES (RETAMAS AMPLIADO),MINERA AURIFERA RETAMAS S.A.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-77.4584,-8.0412,True,32.5805
+020607,ÁNCASH,PARIAHUANCA,SAN GERONIMO,CAL SAN GERONIMO S.R.L.,Minería no metálica,No metálica,No metálico,Calcita,False,False,False,False,-77.5920,-9.3540,False,26.1476
+130809,LA LIBERTAD,PATAZ,LA PODEROSA DE TRUJILLO,COMPAÑIA MINERA PODEROSA S.A.,Minería subterránea,Metálica,Oro,"Au, Ag",True,False,True,False,-77.6245,-7.6874,True,35.5250
+130809,LA LIBERTAD,PATAZ,LIBERTAD,COMPAÑIA MINERA PODEROSA S.A.,Minería subterránea,Metálica,Oro,"Au, Ag",True,False,True,False,-77.5790,-7.7634,True,35.5250
+180208,MOQUEGUA,PUQUINA,SANTA BARBARA GMC,MINERA SANTA BARBARA GMC - MSB S.A.C.,Minería no metálica,No metálica,No metálico,Piedra Laja,False,False,False,False,-71.2400,-16.5840,True,17.0828
+211206,PUNO,QUIACA,CORI RIQUEZA,CORI PUNO S.A.C.,Minería subterránea,Metálica,Oro,Au,True,False,False,False,-69.2257,-14.2858,False,45.4150
+211206,PUNO,QUIACA,UNTUCA,CORI PUNO S.A.C.,Minería subterránea,Metálica,Oro,Au,True,False,False,False,-69.3670,-14.5880,True,45.4150
+040207,AREQUIPA,QUILCA,15 DE ENERO,COMPAÑIA MINERA AGREGADOS CALCAREOS S.A.,Minería no metálica,No metálica,No metálico,"Feldespatos, Mica",False,False,False,False,-72.3850,-16.6690,True,8.8230
+080707,CUSCO,QUIÑOTA,ANABI,ANABI S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-72.2850,-14.4412,True,54.5202
+040606,AREQUIPA,RÍO GRANDE,SAN JUAN DE AREQUIPA,CENTURY MINING PERU S.A.C.,Minería subterránea,Metálica,Oro,Au,True,False,False,False,-73.0900,-15.8850,True,14.6104
+150716,LIMA,SAN ANTONIO,UNICON,UNION DE CONCRETERAS S.A.,Minería no metálica,No metálica,No metálico,Hormigón,False,False,False,False,-76.8908,-11.9519,True,18.9465
+110507,ICA,SAN CLEMENTE,LAS DUNAS,UNION ANDINA DE CEMENTOS S.A.A.,Minería no metálica,No metálica,No metálico,Yeso,False,False,False,False,-76.1600,-13.6400,True,4.7835
+190108,PASCO,SAN FCO.DE ASIS DE YARUSYACÁN,ATACOCHA,COMPAÑIA MINERA ATACOCHA S.A.A.,Minería subterránea,Metálica,Cobre,"Pb, Zn, Au, Ag, Cu, Bi",True,True,True,True,-76.2167,-10.5754,True,46.5817
+240105,TUMBES,SAN JACINTO,PAN Y AZUCAR 2007,RAZA VENTAS S.A.C,Minería no metálica,No metálica,No metálico,Arenisca,False,False,False,False,-80.4720,-3.6500,True,11.2335
+040119,AREQUIPA,SAN JUAN DE TARUCANI,INKABOR (BORAX),INKABOR S.A.C.,Minería no metálica,No metálica,No metálico,Boratos / Ulexita,False,False,False,False,-71.1400,-16.3780,True,27.3373
+021014,ÁNCASH,SAN MARCOS,ANTAMINA,COMPAÑIA MINERA ANTAMINA S.A.,Minería superficial,Metálica,Cobre,"Cu, Mo, Pb, Zn, Ag",False,True,True,True,-77.0647,-9.5368,True,24.7852
+150722,LIMA,SAN MATEO,CORICANCHA,GREAT PANTHER CORICANCHA S.A.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-76.3120,-11.7550,True,12.3182
+101007,HUÁNUCO,SAN MIGUEL DE CAURI,RAURA,COMPAÑIA MINERA RAURA S.A.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Pb, Cu",False,True,True,True,-76.7552,-10.4495,True,43.6640
+090509,HUANCAVELICA,SAN PEDRO DE CORIS,COBRIZA 1126,DOE RUN PERU S.R.L. EN LIQUIDACION EN MARCHA,Minería subterránea,Metálica,Cobre,"Cu, Ag",False,True,True,False,-74.3972,-12.5660,True,35.5723
+130701,LA LIBERTAD,SAN PEDRO DE LLOC,PACASMAYO,CEMENTOS PACASMAYO S.A.A.,Minería no metálica,No metálica,No metálico,"Arcillas, Arena",False,False,False,False,-79.5530,-7.3830,False,21.0349
+120807,JUNÍN,SANTA BÁRBARA DE CARHUACAYA,ALPAMARCA,COMPAÑIA MINERA CHUNGAR S.A.C.,Minería superficial,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-76.4513,-11.2167,True,20.4769
+150610,LIMA,SANTA CRUZ DE ANDAMARCA,SANTANDER,TREVALI PERU S.A.C.,Minería subterránea,Metálica,Cobre,"Pb, Zn, Ag, Cu",False,True,True,True,-76.5207,-11.1939,True,18.8907
+210709,PUNO,SANTA LUCIA,TACAZA,CONSORCIO DE INGENIEROS EJECUTORES MINEROS S.A.,Minería superficial,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-70.7273,-15.6280,True,47.6759
+200801,PIURA,SECHURA,BAYOVAR 2,COMPAÑIA MINERA MISKI MAYO S.R.L.,Minería no metálica,No metálica,No metálico,Fosfatos,False,False,False,False,-80.8379,-6.1032,True,25.8038
+200801,PIURA,SECHURA,BAYOVAR Nº 12,JUAN PAULO QUAY S.A.C.,Minería no metálica,No metálica,No metálico,Yeso,False,False,False,False,-80.5920,-5.9790,True,25.8038
+200801,PIURA,SECHURA,BAYOVAR Nº 9,FOSFATOS DEL PACIFICO S.A.,Minería no metálica,No metálica,No metálico,Diatomita,False,False,False,False,-80.8520,-5.9830,True,25.8038
+200801,PIURA,SECHURA,VIRRILA,CEMENTOS PACASMAYO S.A.A.,Minería no metálica,No metálica,No metálico,Conchuelas,False,False,False,False,-80.7655,-5.9228,True,25.8038
+061309,CAJAMARCA,SEXI,CUNYAC,CEMENTOS PACASMAYO S.A.A.,Minería no metálica,No metálica,No metálico,Puzolana,False,False,False,False,-79.0320,-6.5270,True,48.7260
+190109,PASCO,SIMÓN BOLÍVAR,PARAGSHA,EMPRESA ADMINISTRADORA CERRO S.A.C.,Minería superficial,Metálica,Cobre,"Cu, Pb, Zn, Au, Ag",True,True,True,True,-76.2634,-10.6888,True,26.9061
+190109,PASCO,SIMÓN BOLÍVAR,OXIDOS DE PASCO,OXIDOS DE PASCO S.A.C.,Minería superficial,Metálica,Cobre,"Cu, Au, Ag",True,True,True,False,-76.2790,-10.6860,True,26.9061
+080807,CUSCO,SUYCKUTAMBO,ANA MARIA,AMG-AUPLATA MINING GROUP PERU S.A.C.,Minería subterránea,Metálica,Oro,"Pb, Zn, Au, Ag",True,False,True,True,-71.7481,-15.0721,True,42.3677
+040516,AREQUIPA,TAPAY,TAMBOMAYO,COMPAÑÍA DE MINAS BUENAVENTURA S.A.A.,Minería subterránea,Metálica,Oro,"Au, Ag, Pb, Zn",True,False,True,True,-71.9147,-15.4712,True,43.0757
+190111,PASCO,TINYAHUARCO,HUARAUCACA,SOCIEDAD MINERA EL BROCAL S.A.A.,Minería superficial,Metálica,Cobre,"Zn, Ag, Pb, Cu",False,True,True,True,-76.2670,-10.7473,True,19.3430
+180106,MOQUEGUA,TORATA,CUAJONE,SOUTHERN PERU COPPER CORPORATION SUCURSAL DEL PERU,Minería superficial,Metálica,Cobre,"Cu, Mo, Au, Ag",True,True,True,False,-70.7860,-17.0672,True,6.0525
+040124,AREQUIPA,UCHUMAYO,LA PODEROSA N°1,CONCRETOS SUPERMIX S.A.,Minería no metálica,No metálica,No metálico,Hormigón,False,False,False,False,-71.7360,-16.4430,True,6.3302
+130614,LA LIBERTAD,USQUIL,ALTO CHICAMA,MINERA BARRICK MISQUICHILCA S.A.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-78.2991,-7.8893,True,55.7545
+080708,CUSCO,VELILLE,CONSTANCIA,HUDBAY PERU S.A.C.,Minería superficial,Metálica,Cobre,"Cu, Mo, Au, Ag",True,True,True,False,-71.7686,-14.4562,True,38.7445
+150143,LIMA,VILLA MARÍA DEL TRIUNFO,ATOCONGO,UNION ANDINA DE CEMENTOS S.A.A.,Minería no metálica,No metálica,No metálico,Caliza,False,False,False,False,-76.8769,-12.1889,False,16.8235
+110305,ICA,VISTA ALEGRE,LOS INCAS,KARTIKAY PERUVIAN MINING COMPANY S.A.C.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Au, Ag",True,True,True,True,-74.4110,-14.5723,False,3.8953
+110305,ICA,VISTA ALEGRE,VISTA GOLD,VISTA GOLD S.A.C.,Minería superficial,Metálica,Oro,"Au, Ag",True,False,True,False,-74.9530,-14.9560,True,3.8953
+120306,JUNÍN,VITOC,SAN VICENTE,COMPAÑIA MINERA SAN IGNACIO DE MOROCOCHA S.A.A.,Minería subterránea,Metálica,Zinc,"Pb, Zn",False,False,False,True,-75.3894,-11.2292,True,13.7562
+190113,PASCO,YANACANCHA,ELPORVENIR,NEXA RESOURCES EL PORVENIR S.A.C.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Au, Ag",True,True,True,True,-76.2131,-10.6255,False,18.6620
+040127,AREQUIPA,YARABAMBA,CERRO VERDE,SOCIEDAD MINERA CERRO VERDE S.A.A.,Minería superficial,Metálica,Cobre,"Cu, Mo",False,True,False,False,-71.5702,-16.5341,True,12.7269
+120810,JUNÍN,YAULI,AMERICANA,COMPAÑIA MINERA CASAPALCA S.A.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Cu, Pb",False,True,True,True,-76.1996,-11.6986,True,4.2714
+120810,JUNÍN,YAULI,ANTICONA,COMPAÑIA MINERA ARGENTUM S.A.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Cu, Pb",False,True,True,True,-76.1716,-11.6372,True,4.2714
+120810,JUNÍN,YAULI,CARAHUACRA,VOLCAN COMPAÑÍA MINERA S.A.A.,Minería subterránea,Metálica,Cobre,"Zn, Ag, Cu, Pb",False,True,True,True,-76.0704,-11.7404,True,4.2714
+120810,JUNÍN,YAULI,MANUELITA,COMPAÑIA MINERA ARGENTUM S.A.,Minería subterránea,Metálica,Cobre,"Pb, Zn, Ag, Cu",False,True,True,True,-76.0961,-11.6289,True,4.2714
+120810,JUNÍN,YAULI,SAN CRISTOBAL,VOLCAN COMPAÑÍA MINERA S.A.A.,Minería subterránea,Metálica,Cobre,"Cu, Pb, Zn, Ag",False,True,True,True,-75.4845,-12.0188,False,4.2714
+120810,JUNÍN,YAULI,TUNSHURUCO,MINERA CHINALCO PERU S.A.,Minería no metálica,No metálica,No metálico,Caliza,False,False,False,False,-76.1398,-11.6561,True,4.2714
+060508,CAJAMARCA,YONÁN,TEMBLADERA,CEMENTOS PACASMAYO S.A.A.,Minería no metálica,No metálica,No metálico,Caliza,False,False,False,False,-79.1240,-7.2470,True,26.3616
+040128,AREQUIPA,YURA,YURA,YURA S.A.,Minería no metálica,No metálica,No metálico,"Caliza, Pizarra, Puzolana, Yeso",False,False,False,False,-71.7787,-16.2065,True,14.1267

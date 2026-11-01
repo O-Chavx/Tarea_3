@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="es">
+<title>Minería y pobreza en el Perú</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una columna de lectura; barra de filtros fija arriba; mapa grande + paneles de gráficos en rejilla de 2 columnas que se apila en celular */
+:root{
+  --bg:#f3f5f7; --panel:#ffffff; --fg:#13202b; --muted:#56636f; --faint:#8a96a1; --line:#dde3e8; --grid:#edf0f3;
+  --minero:#eb6834; --nominero:#2a78d6; --accent:#b4531c; --hl:#13202b;
+  --s1:#e6eef8; --s2:#b7d3f6; --s3:#86b6ef; --s4:#5598e7; --s5:#2a78d6; --s6:#1c5cab; --s7:#104281; --s8:#0d2b55;
+  --o1:#fdeee6; --o2:#f9cdb5; --o3:#f3a882; --o4:#eb8352; --o5:#d9622c; --o6:#b04a1d; --o7:#7f3412;
+  --nodata:#d4d9de;
+  --display:"Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e141a; --panel:#151d25; --fg:#e7edf2; --muted:#a3afba; --faint:#76838f; --line:#26313b; --grid:#1d2730;
+  --minero:#f07a48; --nominero:#4b95ea; --accent:#f08a50; --hl:#ffffff;
+  --s1:#162333; --s2:#173a63; --s3:#1c5cab; --s4:#2a78d6; --s5:#4b95ea; --s6:#7cb2f0; --s7:#acd0f7; --s8:#dbeafc;
+  --o1:#2a1a12; --o2:#5a2a14; --o3:#8a3c18; --o4:#c2521f; --o5:#e8743f; --o6:#f4a37b; --o7:#fbd2bc;
+  --nodata:#2e3843; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#0e141a; --panel:#151d25; --fg:#e7edf2; --muted:#a3afba; --faint:#76838f; --line:#26313b; --grid:#1d2730;
+  --minero:#f07a48; --nominero:#4b95ea; --accent:#f08a50; --hl:#ffffff;
+  --s1:#162333; --s2:#173a63; --s3:#1c5cab; --s4:#2a78d6; --s5:#4b95ea; --s6:#7cb2f0; --s7:#acd0f7; --s8:#dbeafc;
+  --o1:#2a1a12; --o2:#5a2a14; --o3:#8a3c18; --o4:#c2521f; --o5:#e8743f; --o6:#f4a37b; --o7:#fbd2bc;
+  --nodata:#2e3843; color-scheme:dark;}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:800;font-stretch:80%;letter-spacing:-.01em}
+h2{font-size:1.45rem;font-weight:700;font-stretch:85%}
+h3{font-size:1.05rem;font-weight:700;font-stretch:90%}
+p{margin:0}
+a{color:var(--accent)}
+.eyebrow{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+/* Cabecera */
+header.hero{padding-block:40px 28px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;align-items:end}
+.hero .q{font-size:1.2rem;margin-top:14px;max-width:62ch}
+.hero .q strong{color:var(--fg)}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.92rem;color:var(--muted)}
+.facts dt{font:500 .72rem/1.9 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--faint)}
+.facts dd{margin:0}
+/* Filtros */
+.filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--panel) 94%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.filters .wrap{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:end;padding-block:10px}
+.ctl{display:flex;flex-direction:column;gap:3px;min-width:0}
+.ctl label{font:500 .7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+select,input[type=search]{font:inherit;font-size:.95rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 10px;min-width:0;max-width:100%}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:.9rem;border:0;background:var(--bg);color:var(--muted);padding:6px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.reset{font:inherit;font-size:.9rem;background:none;border:0;color:var(--accent);cursor:pointer;padding:6px 4px;text-decoration:underline}
+.scope{margin-left:auto;font-size:.88rem;color:var(--muted)}
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:24px}
+.kpi{background:var(--panel);padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.kpi .v{font:700 2.1rem/1 var(--display);font-stretch:85%;font-variant-numeric:tabular-nums}
+.kpi .v small{font-size:1rem;font-weight:600;color:var(--muted)}
+.kpi .s{font-size:.88rem;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;padding:2px 8px;border-radius:99px;border:1px solid var(--line);width:max-content;max-width:100%}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.dot.m{background:var(--minero)} .dot.n{background:var(--nominero)}
+/* Paneles */
+section{margin-top:28px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;min-width:0}
+.panel header{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.panel .sub{font-size:.9rem;color:var(--muted);max-width:70ch}
+.map-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px}
+#map{width:100%;aspect-ratio:3/4;max-height:760px;display:block;touch-action:none;cursor:grab}
+#map:active{cursor:grabbing}
+.legend{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;font-size:.84rem;color:var(--muted);margin-top:8px}
+.ramp{display:flex;align-items:stretch}
+.ramp span{display:flex;flex-direction:column;font:400 .7rem/1.2 var(--mono);color:var(--muted)}
+.ramp i{display:block;width:30px;height:10px;margin-bottom:3px}
+.ramp span+span i{margin-left:2px}
+.tri{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid var(--fg);display:inline-block}
+.zoombtns{display:flex;gap:6px;margin-top:8px}
+.zoombtns button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:6px;padding:4px 10px;cursor:pointer}
+.side{display:flex;flex-direction:column;gap:14px;min-width:0}
+.ficha{border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--bg)}
+.ficha .big{font:700 1.8rem/1 var(--display);font-stretch:85%}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:10px 0 0;font-size:.9rem}
+.ficha dt{color:var(--muted)} .ficha dd{margin:0;font-variant-numeric:tabular-nums;min-width:0;overflow-wrap:anywhere}
+svg text{fill:var(--muted);font:12px var(--body)}
+svg .lbl{fill:var(--fg);font-weight:600}
+svg .axis line,svg .axis path{stroke:var(--line)}
+svg .gridl{stroke:var(--grid)}
+.chart{width:100%;display:block;overflow:visible}
+.tip{position:fixed;pointer-events:none;z-index:20;background:var(--panel);color:var(--fg);border:1px solid var(--line);box-shadow:0 6px 24px rgb(0 0 0 / .14);border-radius:8px;padding:8px 10px;font-size:.85rem;max-width:280px;opacity:0;transition:opacity .08s}
+.tip b{font-family:var(--display);font-stretch:90%}
+.tip .r{display:flex;justify-content:space-between;gap:14px;color:var(--muted)} .tip .r span:last-child{color:var(--fg);font-variant-numeric:tabular-nums}
+/* Tabla */
+.tbl-wrap{overflow-x:auto;max-height:420px;overflow-y:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--grid);white-space:nowrap}
+th{position:sticky;top:0;background:var(--panel);font:500 .72rem/1.2 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);cursor:pointer}
+td.n{text-align:right;font-variant-numeric:tabular-nums} th.n{text-align:right}
+tbody tr{cursor:pointer} tbody tr:hover{background:var(--bg)}
+.bar-in{display:inline-block;height:8px;border-radius:0 4px 4px 0;background:var(--nominero);vertical-align:middle;margin-right:6px}
+.bar-in.m{background:var(--minero)}
+/* Hallazgos */
+.findings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.finding{border-top:3px solid var(--fg);padding-top:12px;display:flex;flex-direction:column;gap:8px}
+.finding .big{font:800 2.6rem/1 var(--display);font-stretch:80%;color:var(--accent)}
+.prose{max-width:72ch;display:flex;flex-direction:column;gap:10px;color:var(--fg)}
+.prose ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+footer{margin-top:40px;padding-block:24px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+@media (max-width:980px){.map-layout,.grid2,.hero-grid{grid-template-columns:minmax(0,1fr)} .findings,.cols{grid-template-columns:minmax(0,1fr)} #map{aspect-ratio:4/5}}
+@media (max-width:640px){.filters{position:static} .kpis{grid-template-columns:repeat(2,minmax(0,1fr))} .kpi .v{font-size:1.7rem} .scope{margin-left:0;width:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Tarea 3 · Python Intermedio · Oscar Andres Chavez Inocente</p>
+      <h1 style="margin-top:10px">Minería y pobreza en el Perú</h1>
+      <p class="q"><strong>¿Los distritos que albergan unidades mineras tienen menos pobreza monetaria que el resto, y esa diferencia se mantiene al comparar dentro del mismo departamento?</strong></p>
+      <p class="q" style="font-size:1rem;color:var(--muted)">La minería es el principal motor exportador del país, pero su llegada a un territorio no garantiza bienestar para quienes viven allí. Este tablero cruza la pobreza estimada de cada distrito con la ubicación de las unidades mineras en producción.</p>
+    </div>
+    <dl class="facts">
+      <dt>Cobertura</dt><dd>Perú, 25 departamentos, 1,873 distritos</dd>
+      <dt>Periodo</dt><dd>Pobreza monetaria 2018 (Mapa de Pobreza INEI, publicado en 2020) · unidades mineras del registro MINEM usado en el curso</dd>
+      <dt>Fuentes</dt><dd><a href="https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1718/Libro.pdf" target="_blank" rel="noopener">INEI, Mapa de pobreza monetaria 2018</a> · <a href="http://www.minem.gob.pe/_publicaSector.php?idSector=1&amp;idCategoria=24" target="_blank" rel="noopener">MINEM, unidades mineras</a> · Límites distritales INEI</dd>
+    </dl>
+  </div>
+</header>
+
+<nav class="filters" aria-label="Filtros">
+  <div class="wrap">
+    <div class="ctl"><label for="f-dep">Departamento</label><select id="f-dep"></select></div>
+    <div class="ctl"><label for="f-met">Tipo de explotación</label><select id="f-met"></select></div>
+    <div class="ctl"><label for="f-min">Mineral</label><select id="f-min"></select></div>
+    <div class="ctl"><label for="f-q">Buscar distrito</label><input id="f-q" type="search" placeholder="p. ej. Yauli, Chumbivilcas" autocomplete="off"></div>
+    <button class="reset" id="f-reset" type="button">Restablecer</button>
+    <p class="scope" id="scope" aria-live="polite"></p>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div class="kpis" id="kpis"></div>
+
+  <section class="map-layout">
+    <div class="panel">
+      <header>
+        <h2>Mapa distrital</h2>
+        <p class="sub">Cada polígono es un distrito; los triángulos son unidades mineras. Pasa el cursor para ver el detalle, haz clic para fijar la ficha, rueda o pellizca para acercar.</p>
+      </header>
+      <div class="ctl" style="margin-bottom:8px">
+        <span class="eyebrow" id="lbl-var">Colorear el mapa por</span>
+        <div class="seg" role="group" aria-labelledby="lbl-var">
+          <button type="button" data-var="pobreza" aria-pressed="true">Pobreza (%)</button>
+          <button type="button" data-var="dist" aria-pressed="false">Distancia a una mina (km)</button>
+        </div>
+      </div>
+      <svg id="map" role="img" aria-label="Mapa de pobreza distrital del Perú con unidades mineras"></svg>
+      <div class="legend" id="map-legend"></div>
+      <div class="zoombtns"><button type="button" id="z-in" aria-label="Acercar">+</button><button type="button" id="z-out" aria-label="Alejar">−</button><button type="button" id="z-fit">Encuadrar</button></div>
+    </div>
+    <div class="side">
+      <div class="ficha" id="ficha"></div>
+      <div class="panel">
+        <header>
+          <h3>Pobreza según cercanía a una mina</h3>
+          <p class="sub">Promedio simple de pobreza por banda de distancia entre el centro del distrito y la unidad minera más cercana.</p>
+        </header>
+        <svg class="chart" id="c-bandas"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="panel">
+      <header>
+        <h3>¿Cuánto cambia al comparar dentro del departamento?</h3>
+        <p class="sub" id="sub-intra">Pobreza media de los distritos con minas frente al resto del mismo departamento.</p>
+      </header>
+      <div class="legend" style="margin:0 0 6px"><span class="chip"><i class="dot m"></i>Con minas</span><span class="chip"><i class="dot n"></i>Sin minas</span></div>
+      <svg class="chart" id="c-intra"></svg>
+    </div>
+    <div class="side" style="gap:20px">
+      <div class="panel">
+        <header>
+          <h3>Distribución: cada punto es un distrito</h3>
+          <p class="sub">La línea vertical marca la mediana de cada grupo; la zona sombreada, 40 % o más de pobreza.</p>
+        </header>
+        <svg class="chart" id="c-strip"></svg>
+      </div>
+      <div class="panel">
+        <header>
+          <h3>Pobreza del distrito según el mineral explotado</h3>
+          <p class="sub">Promedio de la pobreza del distrito donde opera cada unidad. Una unidad puede producir varios minerales.</p>
+        </header>
+        <svg class="chart" id="c-mineral"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header>
+      <h2>Explorar distritos</h2>
+      <p class="sub" id="tbl-sub">Ordenados por pobreza. Usa el buscador de arriba; haz clic en una fila para ubicarla en el mapa o en un encabezado para reordenar.</p>
+    </header>
+    <div class="tbl-wrap"><table id="tbl"><thead><tr>
+      <th data-k="distrito">Distrito</th><th data-k="provincia">Provincia</th><th data-k="departamento">Departamento</th>
+      <th data-k="pobreza" class="n">Pobreza %</th><th data-k="nmin" class="n">Unidades mineras</th><th data-k="dist" class="n">Mina más cercana (km)</th>
+    </tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Hallazgos principales</p>
+    <h2 style="margin:6px 0 18px">Lo que dicen los datos (Perú completo, todas las unidades)</h2>
+    <div class="findings" id="findings"></div>
+  </section>
+
+  <section class="cols">
+    <div class="prose">
+      <h3>Metodología</h3>
+      <ul>
+        <li>Pobreza: punto medio del intervalo de confianza al 95 % que INEI estima para cada distrito (Mapa de pobreza 2018, estimación en áreas pequeñas con Censo 2017 y ENAHO).</li>
+        <li>Unidades mineras: 142 unidades del registro MINEM del curso, unidas a los distritos por su código UBIGEO. Un distrito es «minero» si alberga al menos una unidad.</li>
+        <li>Brecha bruta: pobreza media de distritos mineros menos la de los no mineros. Brecha dentro del departamento: la misma resta hecha en cada departamento y promediada según su número de distritos mineros.</li>
+        <li>Significancia: Mann–Whitney para la brecha bruta y una prueba de permutación con 10,000 sorteos dentro de cada departamento.</li>
+        <li>Distancia: haversine desde el centroide del polígono del distrito a la unidad más cercana. Los filtros recalculan todo en el navegador.</li>
+      </ul>
+    </div>
+    <div class="prose">
+      <h3>Fuentes</h3>
+      <ul>
+        <li><a href="https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1718/Libro.pdf" target="_blank" rel="noopener">INEI (2020). Mapa de pobreza monetaria provincial y distrital 2018.</a></li>
+        <li><a href="http://www.minem.gob.pe/_publicaSector.php?idSector=1&amp;idCategoria=24" target="_blank" rel="noopener">MINEM. Unidades mineras en producción.</a></li>
+        <li>Límites distritales INEI (geojson simplificado del curso, 1,834 polígonos).</li>
+        <li><a href="https://github.com/d2cml-ai/Data-Science-Python" target="_blank" rel="noopener">Bases del curso Data-Science-Python (sesión 06, geoespacial).</a></li>
+      </ul>
+    </div>
+    <div class="prose">
+      <h3>Limitaciones</h3>
+      <ul>
+        <li>Es una asociación, no un efecto causal: las minas no se ubican al azar y los distritos mineros pueden diferir por altitud, conectividad o urbanización.</li>
+        <li>Solo hay un corte (2018): no se puede ver si la pobreza bajó después de que llegó la mina.</li>
+        <li>Promedios simples por distrito, sin ponderar por población; el mapa no tiene 50 distritos creados después del shapefile (siguen en tablas y KPIs).</li>
+        <li>El registro minero no es exhaustivo (142 unidades, sin minería artesanal ni informal). En 33 unidades la coordenada cae fuera del distrito declarado; para «minero» se usa el UBIGEO oficial.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Elaborado por Oscar Andres Chavez Inocente con Python (pandas, scipy) y D3.js. Análisis, código y datos en el repositorio del proyecto. Construido con apoyo de IA (Claude); las cifras se verificaron contra los datos procesados.</div>
+</footer>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="data/datos.js"></script>
+<script>
+(() => {
+const D = window.DATOS, R = D.resultados;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt1 = d3.format(".1f"), fmtInt = d3.format(",");
+const pct = v => v == null || isNaN(v) ? "—" : fmt1(v).replace(".", ".") + " %";
+const pp = v => (v > 0 ? "+" : v < 0 ? "−" : "") + fmt1(Math.abs(v)) + " pp";
+const title = s => s.toLowerCase().replace(/(^|[\s(-])([a-záéíóúñü])/g, (m, a, b) => a + b.toUpperCase());
+
+const UMBRAL = 40;
+const BANDAS = ["Distrito minero", "< 25 km", "25–50 km", "50–100 km", "> 100 km"];
+const MINERALES = [
+  ["TODOS", "Todos"], ["oro", "Oro (Au)"], ["cobre", "Cobre (Cu)"], ["plata", "Plata (Ag)"],
+  ["zinc_plomo", "Zinc o plomo"], ["nometal", "No metálicos"]];
+const distritos = D.distritos;
+const byU = new Map(distritos.map(d => [d.ubigeo, d]));
+const deps = [...new Set(distritos.map(d => d.departamento))].sort((a, b) => a.localeCompare(b, "es"));
+const metodos = [...new Set(D.minas.map(m => m.metodo))].sort();
+
+// ── Controles ──
+const $ = id => document.getElementById(id);
+$("f-dep").innerHTML = `<option value="TODOS">Todo el Perú</option>` + deps.map(d => `<option value="${d}">${title(d)}</option>`).join("");
+$("f-met").innerHTML = `<option value="TODOS">Todos</option>` + metodos.map(m => `<option>${m}</option>`).join("");
+$("f-min").innerHTML = MINERALES.map(([k, l]) => `<option value="${k}">${l}</option>`).join("");
+const S = { dep: "TODOS", met: "TODOS", min: "TODOS", q: "", mapVar: "pobreza", sel: null, sortK: "pobreza", sortDir: -1 };
+try { const s = JSON.parse(localStorage.getItem("mp-filtros") || "{}"); Object.assign(S, s, { sel: null }); } catch (e) {}
+const save = () => { try { localStorage.setItem("mp-filtros", JSON.stringify({ dep: S.dep, met: S.met, min: S.min, mapVar: S.mapVar })); } catch (e) {} };
+
+// ── Cálculo con filtros ──
+const rad = Math.PI / 180;
+function hav(lo1, la1, lo2, la2) {
+  const a = Math.sin((la2 - la1) * rad / 2) ** 2 + Math.cos(la1 * rad) * Math.cos(la2 * rad) * Math.sin((lo2 - lo1) * rad / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(a));
+}
+function minaPasa(m) {
+  if (S.met !== "TODOS" && m.metodo !== S.met) return false;
+  if (S.min === "TODOS") return true;
+  if (S.min === "nometal") return m.tipo === "No metálica";
+  return !!m[S.min];
+}
+function banda(km) { return km === 0 ? BANDAS[0] : km < 25 ? BANDAS[1] : km < 50 ? BANDAS[2] : km < 100 ? BANDAS[3] : BANDAS[4]; }
+let C = {};
+function calcular() {
+  const ms = D.minas.filter(minaPasa);
+  const cnt = d3.rollup(ms, v => v.length, m => m.ubigeo);
+  for (const d of distritos) {
+    d.nmin = cnt.get(d.ubigeo) || 0;
+    d.min = d.nmin > 0;
+    if (d.min) d.dist = 0;
+    else if (d.lon_c == null || !ms.length) d.dist = null;
+    else { let b = Infinity; for (const m of ms) { const k = hav(d.lon_c, d.lat_c, m.lon, m.lat); if (k < b) b = k; } d.dist = b; }
+    d.banda = d.dist == null ? null : banda(d.dist);
+  }
+  const scope = S.dep === "TODOS" ? distritos : distritos.filter(d => d.departamento === S.dep);
+  const msScope = S.dep === "TODOS" ? ms : ms.filter(m => m.departamento === S.dep);
+  const M = scope.filter(d => d.min), N = scope.filter(d => !d.min);
+  // brecha dentro de departamento (nacional, ponderada por n.º de distritos mineros)
+  const intra = deps.map(dep => {
+    const g = distritos.filter(d => d.departamento === dep), gm = g.filter(d => d.min), gn = g.filter(d => !d.min);
+    return { dep, nm: gm.length, nn: gn.length, pm: d3.mean(gm, d => d.pobreza), pn: d3.mean(gn, d => d.pobreza) };
+  }).filter(r => r.nm > 0 && r.nn > 0).map(r => ({ ...r, gap: r.pm - r.pn }));
+  const wsum = d3.sum(intra, r => r.nm);
+  C = { ms, msScope, scope, M, N, intra,
+    pm: d3.mean(M, d => d.pobreza), pn: d3.mean(N, d => d.pobreza),
+    am: M.length ? 100 * M.filter(d => d.pobreza >= UMBRAL).length / M.length : null,
+    an: N.length ? 100 * N.filter(d => d.pobreza >= UMBRAL).length / N.length : null,
+    gapIntra: wsum ? d3.sum(intra, r => r.gap * r.nm) / wsum : null,
+    masPobre: d3.greatest(M, d => d.pobreza) };
+}
+
+// ── KPIs ──
+function kpis() {
+  const { scope, M, msScope, pm, pn, am, an, gapIntra, masPobre, intra } = C;
+  const where = S.dep === "TODOS" ? "en el Perú" : "en " + title(S.dep);
+  const tiles = [
+    { e: "Distritos analizados", v: fmtInt(scope.length), s: `${fmtInt(M.length)} con al menos una unidad minera ${where}` },
+    { e: "Unidades mineras", v: fmtInt(msScope.length), s: S.dep === "TODOS" ? `En ${new Set(msScope.map(m => m.departamento)).size} departamentos` : `${fmtInt(new Set(msScope.map(m => m.titular)).size)} titulares distintos` },
+    { e: "Pobreza media", v: pm == null ? "—" : `${fmt1(pm)}<small> vs ${pn == null ? "—" : fmt1(pn)} %</small>`,
+      s: `<span class="chip"><i class="dot m"></i>con minas</span> frente a <span class="chip"><i class="dot n"></i>sin minas</span>` },
+    { e: "Brecha bruta", v: pm == null || pn == null ? "—" : pp(pm - pn), s: "Diferencia en puntos porcentuales de pobreza, " + where },
+    { e: "Distritos con pobreza ≥ 40 %", v: am == null ? "—" : `${fmt1(am)}<small> vs ${an == null ? "—" : fmt1(an)} %</small>`, s: "Proporción entre distritos con minas frente a sin minas" },
+    S.dep === "TODOS"
+      ? { e: "Brecha dentro del mismo departamento", v: gapIntra == null ? "—" : pp(gapIntra), s: `${intra.filter(r => r.gap < 0).length} de ${intra.length} departamentos: los distritos mineros son menos pobres` }
+      : { e: "Distrito minero más pobre", v: masPobre ? `${fmt1(masPobre.pobreza)}<small> %</small>` : "—", s: masPobre ? `${title(masPobre.distrito)} (${title(masPobre.provincia)})` : "No hay distritos mineros con estos filtros" }
+  ];
+  $("kpis").innerHTML = tiles.map(t => `<div class="kpi"><span class="eyebrow">${t.e}</span><span class="v">${t.v}</span><span class="s">${t.s}</span></div>`).join("");
+  const minLbl = MINERALES.find(m => m[0] === S.min)[1];
+  $("scope").textContent = `${S.dep === "TODOS" ? "Todo el Perú" : title(S.dep)} · ${S.met === "TODOS" ? "toda explotación" : S.met.toLowerCase()} · ${minLbl.toLowerCase()} · ${C.ms.length} unidades en el país`;
+}
+
+// ── Tooltip ──
+const tip = $("tip");
+function showTip(ev, html) {
+  tip.innerHTML = html; tip.style.opacity = 1;
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = ev.clientX + 14, y = ev.clientY + 14;
+  if (x + w > innerWidth - 8) x = ev.clientX - w - 14;
+  if (y + h > innerHeight - 8) y = ev.clientY - h - 14;
+  tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
+}
+const hideTip = () => tip.style.opacity = 0;
+const row = (a, b) => `<div class="r"><span>${a}</span><span>${b}</span></div>`;
+const tipDist = d => `<b>${title(d.distrito)}</b><div style="color:var(--muted);margin-bottom:4px">${title(d.provincia)}, ${title(d.departamento)}</div>` +
+  row("Pobreza 2018", pct(d.pobreza)) + row("Unidades mineras", d.nmin) + row("Mina más cercana", d.dist == null ? "—" : d.dist === 0 ? "en el distrito" : fmt1(d.dist) + " km");
+
+// ── Mapa ──
+const svg = d3.select("#map"), gRoot = svg.append("g"), gD = gRoot.append("g"), gM = gRoot.append("g"), gSel = gRoot.append("g");
+const proj = d3.geoIdentity().reflectY(true);
+const path = d3.geoPath(proj);
+const feats = D.geo.features;
+let W = 600, H = 800;
+const zoom = d3.zoom().scaleExtent([1, 40]).on("zoom", ev => {
+  gRoot.attr("transform", ev.transform);
+  gD.selectAll("path").attr("stroke-width", 0.3 / ev.transform.k);
+  gM.selectAll("path").attr("transform", d => `translate(${proj([d.lon, d.lat])}) scale(${1 / ev.transform.k})`);
+  gSel.selectAll("path").attr("stroke-width", 2 / ev.transform.k);
+});
+svg.call(zoom);
+const BREAKS_P = [10, 20, 30, 40, 50, 60, 70], BREAKS_K = [10, 25, 50, 75, 100, 150];
+const colP = () => d3.scaleThreshold(BREAKS_P, ["--s1", "--s2", "--s3", "--s4", "--s5", "--s6", "--s7", "--s8"].map(css));
+const colK = () => d3.scaleThreshold(BREAKS_K, ["--o7", "--o6", "--o5", "--o4", "--o3", "--o2", "--o1"].map(css));
+function sizeMap() {
+  const r = svg.node().getBoundingClientRect(); W = r.width || 600; H = r.height || 800;
+  svg.attr("viewBox", `0 0 ${W} ${H}`);
+  proj.fitExtent([[8, 8], [W - 8, H - 8]], D.geo);
+  gD.selectAll("path").attr("d", path);
+}
+gD.selectAll("path").data(feats).join("path")
+  .attr("stroke", "var(--panel)").attr("stroke-width", .3)
+  .on("pointermove", (ev, f) => { const d = byU.get(f.properties.u); showTip(ev, tipDist(d)); })
+  .on("pointerleave", hideTip)
+  .on("click", (ev, f) => { S.sel = f.properties.u; ficha(); highlight(); });
+const tri = "M0,-6L5.5,4.5L-5.5,4.5Z";
+function drawMap() {
+  const sc = S.mapVar === "pobreza" ? colP() : colK();
+  const noData = css("--nodata");
+  gD.selectAll("path").attr("fill", f => {
+    const d = byU.get(f.properties.u);
+    const v = S.mapVar === "pobreza" ? d.pobreza : d.dist;
+    return v == null ? noData : sc(v);
+  }).attr("opacity", f => S.dep === "TODOS" || byU.get(f.properties.u).departamento === S.dep ? 1 : .28);
+  const k = d3.zoomTransform(svg.node()).k;
+  gM.selectAll("path").data(C.ms, m => m.unidad + m.ubigeo).join("path")
+    .attr("d", tri).attr("fill", "var(--hl)").attr("stroke", "var(--panel)").attr("stroke-width", 1.4)
+    .attr("transform", d => `translate(${proj([d.lon, d.lat])}) scale(${1 / k})`)
+    .attr("opacity", m => S.dep === "TODOS" || m.departamento === S.dep ? 1 : .25)
+    .on("pointermove", (ev, m) => showTip(ev, `<b>${title(m.unidad)}</b><div style="color:var(--muted);margin-bottom:4px">${m.titular}</div>` +
+      row("Distrito", title(m.distrito)) + row("Explotación", m.metodo) + row("Productos", m.productos) + row("Pobreza del distrito", pct(m.pobreza))))
+    .on("pointerleave", hideTip)
+    .on("click", (ev, m) => { S.sel = m.ubigeo; ficha(); highlight(); });
+  // leyenda
+  const lab = S.mapVar === "pobreza" ? ["0", ...BREAKS_P] : ["0", ...BREAKS_K];
+  const cols = S.mapVar === "pobreza" ? colP().range() : colK().range();
+  $("map-legend").innerHTML = `<span>${S.mapVar === "pobreza" ? "Pobreza monetaria (%)" : "Distancia a la mina más cercana (km)"}</span>
+    <span class="ramp">${cols.map((c, i) => `<span><i style="background:${c}"></i>${lab[i]}${i === cols.length - 1 ? "+" : ""}</span>`).join("")}</span>
+    <span><i class="tri" style="vertical-align:-1px"></i> unidad minera</span><span><i class="dot" style="background:var(--nodata);border-radius:2px"></i> sin dato</span>`;
+}
+function fitTo(feat, dur = 600, kmax = 40) {
+  const [[x0, y0], [x1, y1]] = path.bounds(feat);
+  const k = Math.min(kmax, 0.9 / Math.max((x1 - x0) / W, (y1 - y0) / H));
+  const t = d3.zoomIdentity.translate(W / 2, H / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
+  svg.transition().duration(matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : dur).call(zoom.transform, t);
+}
+function fitScope() {
+  if (S.dep === "TODOS") return svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+  fitTo({ type: "FeatureCollection", features: feats.filter(f => byU.get(f.properties.u).departamento === S.dep) });
+}
+function highlight() {
+  const f = feats.find(f => f.properties.u === S.sel);
+  const k = d3.zoomTransform(svg.node()).k;
+  gSel.selectAll("path").data(f ? [f] : []).join("path").attr("d", path).attr("fill", "none")
+    .attr("stroke", "var(--accent)").attr("stroke-width", 2 / k).attr("pointer-events", "none");
+}
+$("z-in").onclick = () => svg.transition().call(zoom.scaleBy, 1.6);
+$("z-out").onclick = () => svg.transition().call(zoom.scaleBy, 1 / 1.6);
+$("z-fit").onclick = fitScope;
+document.querySelectorAll(".seg button").forEach(b => b.onclick = () => {
+  S.mapVar = b.dataset.var; document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x === b)); save(); drawMap();
+});
+
+// ── Ficha del distrito ──
+function ficha() {
+  const d = S.sel ? byU.get(S.sel) : null;
+  if (!d) {
+    const ref = C.masPobre;
+    $("ficha").innerHTML = `<span class="eyebrow">Ficha del distrito</span><p style="margin-top:8px;color:var(--muted)">Haz clic en un distrito del mapa o en una fila de la tabla para ver su ficha.</p>` +
+      (ref ? `<p style="margin-top:8px">Con estos filtros, el distrito minero más pobre es <strong>${title(ref.distrito)}</strong> (${title(ref.departamento)}), con ${pct(ref.pobreza)}.</p>` : "");
+    return;
+  }
+  const rankDep = distritos.filter(x => x.departamento === d.departamento).sort((a, b) => b.pobreza - a.pobreza).findIndex(x => x.ubigeo === d.ubigeo) + 1;
+  const nDep = distritos.filter(x => x.departamento === d.departamento).length;
+  const ms = C.ms.filter(m => m.ubigeo === d.ubigeo);
+  $("ficha").innerHTML = `<span class="eyebrow">Ficha del distrito · UBIGEO ${d.ubigeo}</span>
+    <h3 style="margin-top:6px;font-size:1.4rem">${title(d.distrito)}</h3>
+    <p style="color:var(--muted)">${title(d.provincia)}, ${title(d.departamento)}</p>
+    <p class="big" style="margin-top:10px">${pct(d.pobreza)} <span style="font:400 .9rem var(--body);color:var(--muted)">de pobreza monetaria</span></p>
+    <dl><dt>Puesto en su departamento</dt><dd>${rankDep} de ${nDep} (1 = más pobre)</dd>
+    <dt>Unidades mineras</dt><dd>${ms.length ? ms.map(m => title(m.unidad)).join(", ") : "Ninguna con estos filtros"}</dd>
+    <dt>Mina más cercana</dt><dd>${d.dist == null ? "Sin polígono en el mapa" : d.dist === 0 ? "En el distrito" : fmt1(d.dist) + " km"}</dd>
+    ${ms.length ? `<dt>Minerales</dt><dd>${[...new Set(ms.flatMap(m => m.productos.split(", ")))].join(", ")}</dd>` : ""}</dl>`;
+}
+
+// ── Gráfico: bandas de distancia ──
+function chartBandas() {
+  const el = d3.select("#c-bandas"), w = el.node().getBoundingClientRect().width || 360;
+  const data = BANDAS.map(b => { const g = C.scope.filter(d => d.banda === b); return { b, n: g.length, v: d3.mean(g, d => d.pobreza), a: g.length ? 100 * g.filter(d => d.pobreza >= UMBRAL).length / g.length : null }; });
+  const m = { l: 112, r: 64, t: 6, b: 26 }, bh = 26, gap = 10, h = m.t + m.b + data.length * (bh + gap);
+  el.attr("viewBox", `0 0 ${w} ${h}`).attr("height", h);
+  const x = d3.scaleLinear([0, Math.max(50, d3.max(data, d => d.v || 0))], [m.l, w - m.r]).nice();
+  el.selectAll("*").remove();
+  el.append("g").selectAll("line").data(x.ticks(5)).join("line").attr("class", "gridl").attr("x1", x).attr("x2", x).attr("y1", m.t).attr("y2", h - m.b);
+  el.append("g").attr("class", "axis").attr("transform", `translate(0,${h - m.b})`).call(d3.axisBottom(x).ticks(5).tickSize(0).tickPadding(8).tickFormat(v => v + " %")).select(".domain").remove();
+  const g = el.append("g").selectAll("g").data(data).join("g").attr("transform", (d, i) => `translate(0,${m.t + i * (bh + gap)})`);
+  g.append("text").attr("x", m.l - 10).attr("y", bh / 2 + 4).attr("text-anchor", "end").attr("class", (d, i) => i === 0 ? "lbl" : null).text(d => d.b);
+  g.append("path").attr("fill", (d, i) => i === 0 ? "var(--minero)" : "var(--nominero)")
+    .attr("d", d => { if (d.v == null) return null; const x0 = x(0), x1 = x(d.v), r = Math.min(4, x1 - x0); return `M${x0},0H${x1 - r}Q${x1},0 ${x1},${r}V${bh - r}Q${x1},${bh} ${x1 - r},${bh}H${x0}Z`; });
+  g.append("text").attr("x", d => d.v == null ? m.l + 4 : x(d.v) + 6).attr("y", bh / 2 + 4).attr("class", "lbl num").text(d => d.v == null ? "sin distritos" : fmt1(d.v) + " %");
+  g.append("rect").attr("x", 0).attr("width", w).attr("height", bh + gap).attr("y", -gap / 2).attr("fill", "transparent")
+    .on("pointermove", (ev, d) => showTip(ev, `<b>${d.b}</b>` + row("Distritos", fmtInt(d.n)) + row("Pobreza media", pct(d.v)) + row("Con pobreza ≥ 40 %", pct(d.a))))
+    .on("pointerleave", hideTip);
+}
+
+// ── Gráfico: brecha dentro de cada departamento (dumbbell) ──
+function chartIntra() {
+  const el = d3.select("#c-intra"), w = el.node().getBoundingClientRect().width || 520;
+  const data = C.intra.slice().sort((a, b) => a.gap - b.gap);
+  $("sub-intra").innerHTML = C.gapIntra == null ? "No hay departamentos con distritos mineros y no mineros para comparar con estos filtros."
+    : `Pobreza media de los distritos con minas frente al resto del mismo departamento. Promedio ponderado de la brecha: <strong>${pp(C.gapIntra)}</strong>. Ordenado de mayor a menor ventaja de los distritos mineros.`;
+  const m = { l: 108, r: 60, t: 4, b: 26 }, rh = 22, h = m.t + m.b + Math.max(1, data.length) * rh;
+  el.attr("viewBox", `0 0 ${w} ${h}`).attr("height", h);
+  el.selectAll("*").remove();
+  if (!data.length) return;
+  const x = d3.scaleLinear([0, d3.max(data, d => Math.max(d.pm, d.pn))], [m.l, w - m.r]).nice();
+  el.append("g").selectAll("line").data(x.ticks(5)).join("line").attr("class", "gridl").attr("x1", x).attr("x2", x).attr("y1", m.t).attr("y2", h - m.b);
+  el.append("g").attr("class", "axis").attr("transform", `translate(0,${h - m.b})`).call(d3.axisBottom(x).ticks(5).tickSize(0).tickPadding(8).tickFormat(v => v + " %")).select(".domain").remove();
+  const g = el.append("g").selectAll("g").data(data).join("g").attr("transform", (d, i) => `translate(0,${m.t + i * rh + rh / 2})`)
+    .attr("opacity", d => S.dep === "TODOS" || d.dep === S.dep ? 1 : .35);
+  g.append("text").attr("x", m.l - 10).attr("y", 4).attr("text-anchor", "end").attr("class", d => d.dep === S.dep ? "lbl" : null).text(d => title(d.dep));
+  g.append("line").attr("x1", d => x(d.pm)).attr("x2", d => x(d.pn)).attr("stroke", "var(--faint)").attr("stroke-width", 2);
+  g.append("circle").attr("cx", d => x(d.pn)).attr("r", 5).attr("fill", "var(--nominero)").attr("stroke", "var(--panel)").attr("stroke-width", 2);
+  g.append("circle").attr("cx", d => x(d.pm)).attr("r", 5).attr("fill", "var(--minero)").attr("stroke", "var(--panel)").attr("stroke-width", 2);
+  g.append("text").attr("x", d => x(Math.max(d.pm, d.pn)) + 9).attr("y", 4).attr("class", "num").text(d => pp(d.gap));
+  g.append("rect").attr("x", 0).attr("width", w).attr("y", -rh / 2).attr("height", rh).attr("fill", "transparent")
+    .on("pointermove", (ev, d) => showTip(ev, `<b>${title(d.dep)}</b>` + row(`Con minas (${d.nm})`, pct(d.pm)) + row(`Sin minas (${d.nn})`, pct(d.pn)) + row("Brecha", pp(d.gap))))
+    .on("pointerleave", hideTip)
+    .on("click", (ev, d) => { S.dep = d.dep; $("f-dep").value = d.dep; update(true); });
+}
+
+// ── Gráfico: distribución (strip plot) ──
+function chartStrip() {
+  const el = d3.select("#c-strip"), w = el.node().getBoundingClientRect().width || 520;
+  const m = { l: 92, r: 14, t: 8, b: 26 }, bandH = 64, h = m.t + m.b + 2 * bandH;
+  el.attr("viewBox", `0 0 ${w} ${h}`).attr("height", h); el.selectAll("*").remove();
+  const x = d3.scaleLinear([0, 85], [m.l, w - m.r]);
+  el.append("rect").attr("x", x(UMBRAL)).attr("width", x(85) - x(UMBRAL)).attr("y", m.t).attr("height", 2 * bandH).attr("fill", "var(--grid)");
+  el.append("g").attr("class", "axis").attr("transform", `translate(0,${h - m.b})`).call(d3.axisBottom(x).ticks(6).tickSize(0).tickPadding(8).tickFormat(v => v + " %")).select(".domain").remove();
+  const grupos = [["Con minas", C.M, "var(--minero)"], ["Sin minas", C.N, "var(--nominero)"]];
+  const rnd = d3.randomLcg(7);
+  grupos.forEach(([lab, arr, col], i) => {
+    const y0 = m.t + i * bandH, g = el.append("g");
+    g.append("text").attr("x", m.l - 10).attr("y", y0 + bandH / 2 + 4).attr("text-anchor", "end").attr("class", "lbl").text(lab);
+    g.append("text").attr("x", m.l - 10).attr("y", y0 + bandH / 2 + 19).attr("text-anchor", "end").text(`n = ${fmtInt(arr.length)}`);
+    const r = arr.length > 400 ? 2.2 : 3.4;
+    g.selectAll("circle").data(arr).join("circle").attr("cx", d => x(d.pobreza)).attr("cy", () => y0 + 10 + rnd() * (bandH - 20)).attr("r", r)
+      .attr("fill", col).attr("fill-opacity", arr.length > 400 ? .45 : .8)
+      .on("pointermove", (ev, d) => showTip(ev, tipDist(d))).on("pointerleave", hideTip)
+      .on("click", (ev, d) => { S.sel = d.ubigeo; ficha(); highlight(); });
+    const med = d3.median(arr, d => d.pobreza);
+    if (med != null) {
+      g.append("line").attr("x1", x(med)).attr("x2", x(med)).attr("y1", y0 + 4).attr("y2", y0 + bandH - 4).attr("stroke", "var(--fg)").attr("stroke-width", 2).attr("pointer-events", "none");
+      g.append("text").attr("x", x(med) + 5).attr("y", y0 + 12).attr("class", "lbl num").text("mediana " + fmt1(med) + " %");
+    }
+  });
+}
+
+// ── Gráfico: por mineral ──
+function chartMineral() {
+  const el = d3.select("#c-mineral"), w = el.node().getBoundingClientRect().width || 520;
+  const ms = C.msScope;
+  const grp = MINERALES.slice(1).map(([k, l]) => { const g = ms.filter(m => k === "nometal" ? m.tipo === "No metálica" : m[k]); return { l, n: g.length, v: d3.mean(g, m => m.pobreza) }; });
+  const m = { l: 108, r: 96, t: 4, b: 26 }, bh = 22, gap = 9, h = m.t + m.b + grp.length * (bh + gap);
+  el.attr("viewBox", `0 0 ${w} ${h}`).attr("height", h); el.selectAll("*").remove();
+  const x = d3.scaleLinear([0, Math.max(40, d3.max(grp, d => d.v || 0))], [m.l, w - m.r]).nice();
+  el.append("g").selectAll("line").data(x.ticks(4)).join("line").attr("class", "gridl").attr("x1", x).attr("x2", x).attr("y1", m.t).attr("y2", h - m.b);
+  el.append("g").attr("class", "axis").attr("transform", `translate(0,${h - m.b})`).call(d3.axisBottom(x).ticks(4).tickSize(0).tickPadding(8).tickFormat(v => v + " %")).select(".domain").remove();
+  const g = el.append("g").selectAll("g").data(grp).join("g").attr("transform", (d, i) => `translate(0,${m.t + i * (bh + gap)})`);
+  g.append("text").attr("x", m.l - 10).attr("y", bh / 2 + 4).attr("text-anchor", "end").text(d => d.l);
+  g.append("path").attr("fill", "var(--minero)").attr("d", d => { if (d.v == null) return null; const x0 = x(0), x1 = x(d.v), r = Math.min(4, x1 - x0); return `M${x0},0H${x1 - r}Q${x1},0 ${x1},${r}V${bh - r}Q${x1},${bh} ${x1 - r},${bh}H${x0}Z`; });
+  g.append("text").attr("x", d => d.v == null ? m.l + 4 : x(d.v) + 6).attr("y", bh / 2 + 4).attr("class", "num").html(d => d.v == null ? "sin unidades" : `<tspan class="lbl">${fmt1(d.v)} %</tspan> · ${d.n} unid.`);
+  g.append("rect").attr("width", w).attr("height", bh + gap).attr("y", -gap / 2).attr("fill", "transparent")
+    .on("pointermove", (ev, d) => showTip(ev, `<b>${d.l}</b>` + row("Unidades", d.n) + row("Pobreza media del distrito", pct(d.v)))).on("pointerleave", hideTip);
+}
+
+// ── Tabla ──
+function tabla() {
+  const q = S.q.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  let rows = C.scope.filter(d => !q || norm(d.distrito).includes(q) || norm(d.provincia).includes(q));
+  const k = S.sortK;
+  rows.sort((a, b) => { const va = a[k], vb = b[k]; if (va == null) return 1; if (vb == null) return -1; return (typeof va === "string" ? va.localeCompare(vb, "es") : va - vb) * S.sortDir; });
+  const total = rows.length; rows = rows.slice(0, 200);
+  $("tbl-sub").textContent = `${fmtInt(total)} distritos ${q ? `coinciden con «${S.q}»` : "en el filtro actual"}${total > 200 ? "; se muestran los primeros 200" : ""}. Haz clic en una fila para ubicarla en el mapa o en un encabezado para reordenar.`;
+  document.querySelectorAll("#tbl th").forEach(th => th.setAttribute("aria-sort", th.dataset.k === k ? (S.sortDir > 0 ? "ascending" : "descending") : "none"));
+  d3.select("#tbl tbody").selectAll("tr").data(rows, d => d.ubigeo).join("tr")
+    .html(d => `<td>${title(d.distrito)}</td><td>${title(d.provincia)}</td><td>${title(d.departamento)}</td>
+      <td class="n"><span class="bar-in ${d.min ? "m" : ""}" style="width:${(d.pobreza * .6).toFixed(1)}px"></span>${fmt1(d.pobreza)}</td>
+      <td class="n">${d.nmin || "—"}</td><td class="n">${d.dist == null ? "—" : d.dist === 0 ? "0" : fmt1(d.dist)}</td>`)
+    .on("click", (ev, d) => { S.sel = d.ubigeo; ficha(); highlight(); const f = feats.find(f => f.properties.u === d.ubigeo); if (f) { fitTo(f, 600, 10); document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" }); } });
+}
+document.querySelectorAll("#tbl th").forEach(th => th.onclick = () => {
+  const k = th.dataset.k; S.sortDir = S.sortK === k ? -S.sortDir : (k === "pobreza" || k === "nmin" ? -1 : 1); S.sortK = k; tabla();
+});
+
+// ── Hallazgos (cifras nacionales precalculadas en Python) ──
+const b = R.bandas;
+$("findings").innerHTML = [
+  { big: pp(R.brecha_bruta_pp), h: "Los distritos con minas son menos pobres en promedio",
+    t: `Su pobreza media es ${fmt1(R.pobreza_media_minero)} % frente a ${fmt1(R.pobreza_media_no_minero)} % en el resto (mediana ${fmt1(R.pobreza_mediana_minero)} % vs ${fmt1(R.pobreza_mediana_no_minero)} %). Solo el ${fmt1(R.pct_pobreza_alta_minero)} % de los distritos mineros supera el 40 % de pobreza, frente al ${fmt1(R.pct_pobreza_alta_no_minero)} % de los demás (Mann–Whitney p < 0.001).` },
+  { big: pp(R.brecha_intra_departamento_pp), h: "La ventaja se reduce casi a la mitad dentro de cada departamento",
+    t: `Al comparar cada distrito minero con los no mineros de su mismo departamento, la brecha baja a ${pp(R.brecha_intra_departamento_pp)}. Se mantiene en ${R.deps_mineros_menos_pobres} de ${R.deps_comparados} departamentos (permutación, p ${R.permutacion_p_bilateral}); en Cusco y Huánuco los distritos mineros son más pobres.` },
+  { big: `${fmt1(b[0].pobreza_media)} → ${fmt1(b[4].pobreza_media)} %`, h: "La pobreza crece con la distancia a la mina, pero la mina no la elimina",
+    t: `La pobreza media sube de ${fmt1(b[0].pobreza_media)} % en distritos mineros a ${fmt1(b[1].pobreza_media)} % a menos de 25 km y ${fmt1(b[4].pobreza_media)} % a más de 100 km. Aun así, ${R.mineros_pobreza_alta} distritos mineros superan el 40 %: en Cajamarca sus ${R.cajamarca.mineros} distritos mineros promedian ${fmt1(R.cajamarca.pob_mineros)} %.` }
+].map(f => `<article class="finding"><span class="big num">${f.big}</span><h3>${f.h}</h3><p style="color:var(--muted)">${f.t}</p></article>`).join("");
+
+// ── Orquestación ──
+function update(refit) {
+  calcular(); kpis(); drawMap(); ficha(); highlight(); chartBandas(); chartIntra(); chartStrip(); chartMineral(); tabla(); save();
+  if (refit) fitScope();
+}
+$("f-dep").onchange = e => { S.dep = e.target.value; S.sel = null; update(true); };
+$("f-met").onchange = e => { S.met = e.target.value; update(false); };
+$("f-min").onchange = e => { S.min = e.target.value; update(false); };
+let qT; $("f-q").oninput = e => { clearTimeout(qT); qT = setTimeout(() => { S.q = e.target.value; tabla(); }, 120); };
+$("f-reset").onclick = () => { Object.assign(S, { dep: "TODOS", met: "TODOS", min: "TODOS", q: "", sel: null }); $("f-q").value = ""; syncCtl(); update(true); };
+function syncCtl() {
+  if (!deps.includes(S.dep)) S.dep = "TODOS"; if (!metodos.includes(S.met)) S.met = "TODOS"; if (!MINERALES.some(m => m[0] === S.min)) S.min = "TODOS";
+  $("f-dep").value = S.dep; $("f-met").value = S.met; $("f-min").value = S.min;
+  document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x.dataset.var === S.mapVar));
+}
+syncCtl(); sizeMap(); update(false);
+if (S.dep !== "TODOS") fitScope();
+let rT; addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(() => { sizeMap(); highlight(); drawMap(); chartBandas(); chartIntra(); chartStrip(); chartMineral(); }, 150); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", drawMap);
+new MutationObserver(drawMap).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+})();
+</script>
+
+</html>

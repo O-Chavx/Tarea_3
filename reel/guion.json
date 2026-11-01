@@ -1,0 +1,74 @@
+{
+  "titulo": "Minería y pobreza en el Perú",
+  "fuente": "INEI, Mapa de pobreza 2018 · MINEM",
+  "escenas": [
+    {
+      "frase": "¿Vivir cerca de una mina te hace menos pobre? Crucé la pobreza de mil ochocientos setenta y tres distritos del Perú con ciento cuarenta y dos unidades mineras.",
+      "cifra": "1,873",
+      "etiqueta": "distritos cruzados con 142 unidades mineras",
+      "imagen": "recursos/escena1_mapa.png",
+      "cifra_en_texto": true,
+      "verificacion": "resultados.json: n_distritos = 1873, n_minas = 142",
+      "wer": 0.0
+    },
+    {
+      "frase": "En promedio, los distritos con minas tienen veintiséis punto ocho por ciento de pobreza. El resto, treinta y cuatro punto seis por ciento.",
+      "cifra": "26.8 % vs 34.6 %",
+      "etiqueta": "pobreza media: con minas frente a sin minas",
+      "imagen": "recursos/escena2_distribucion.png",
+      "cifra_en_texto": true,
+      "verificacion": "pobreza_media_minero = 26.84, pobreza_media_no_minero = 34.6",
+      "wer": 0.08695652173913043
+    },
+    {
+      "frase": "Pero las minas están en territorios distintos. Si comparo dentro del mismo departamento, la brecha baja de siete punto ocho a cuatro punto cuatro puntos.",
+      "cifra": "−4.4 pp",
+      "etiqueta": "brecha dentro del mismo departamento (antes −7.8 pp)",
+      "imagen": "recursos/escena3_departamentos.png",
+      "cifra_en_texto": true,
+      "verificacion": "brecha_bruta_pp = -7.76, brecha_intra_departamento_pp = -4.4; 18 de 21 departamentos",
+      "wer": 0.08
+    },
+    {
+      "frase": "Y la pobreza sube cuando nos alejamos: treinta y uno por ciento a menos de veinticinco kilómetros, y casi treinta y siete por ciento a más de cien.",
+      "cifra": "31 % → 37 %",
+      "etiqueta": "pobreza media según distancia a la mina más cercana",
+      "imagen": "recursos/escena4_distancia.png",
+      "cifra_en_texto": true,
+      "verificacion": "bandas: < 25 km = 31.2 %, > 100 km = 36.9 %",
+      "wer": 0.0
+    },
+    {
+      "frase": "Ojo: la mina no garantiza bienestar. Veinticuatro distritos mineros superan el cuarenta por ciento de pobreza. En Cajamarca, sus ocho distritos mineros promedian casi cincuenta y tres por ciento.",
+      "cifra": "24",
+      "etiqueta": "distritos mineros con 40 % o más de pobreza",
+      "imagen": "recursos/escena5_cajamarca.png",
+      "cifra_en_texto": true,
+      "verificacion": "mineros_pobreza_alta = 24; cajamarca.mineros = 8, cajamarca.pob_mineros = 52.9",
+      "wer": 0.0
+    },
+    {
+      "frase": "Es una asociación, no una prueba de causa. Explora el mapa distrito por distrito en mi tablero: el enlace está en la publicación.",
+      "cifra": "",
+      "etiqueta": "Explora el tablero: enlace en la publicación",
+      "imagen": "recursos/escena6_dashboard.png",
+      "cifra_en_texto": true,
+      "verificacion": "cierre; sin cifras",
+      "wer": 0.0
+    }
+  ],
+  "hashtags": [
+    "#Peru",
+    "#Mineria",
+    "#Pobreza",
+    "#DataScience",
+    "#Python",
+    "#DatosAbiertos"
+  ],
+  "posts": {
+    "linkedin": "¿Los distritos con minas son menos pobres? Crucé el Mapa de Pobreza 2018 del INEI (1,873 distritos) con 142 unidades mineras del MINEM.\n\nEn promedio, los distritos con minas tienen 26.8 % de pobreza frente a 34.6 % del resto, pero al comparar dentro del mismo departamento la brecha baja a 4.4 puntos. Y 24 distritos mineros siguen por encima del 40 %.\n\nEs una asociación, no una prueba de causa. La voz del video fue generada con IA a partir de mi propia voz.",
+    "x": "Distritos con minas en Perú: 26.8 % de pobreza vs 34.6 % del resto. Dentro del mismo departamento la brecha baja a 4.4 pp, y 24 distritos mineros superan el 40 %. Tablero con datos INEI y MINEM. (Voz generada con IA a partir de mi voz)",
+    "facebook": "¿La minería reduce la pobreza en los distritos donde opera? Revisé los datos de 1,873 distritos del Perú. La respuesta corta: un poco, pero no siempre. Explora el mapa en mi tablero. (Voz generada con IA a partir de mi voz)"
+  },
+  "cifras_dudosas_en_posts": []
+}
