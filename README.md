@@ -37,7 +37,7 @@ El proyecto cruza la pobreza monetaria que el INEI estimó para cada distrito co
 | Etapa | Estado |
 |---|---|
 | 1. Obtención, procesamiento, análisis y verificación de datos | ✅ Completa: 32 comprobaciones OK |
-| 2. Dashboard público e interactivo | ✅ Terminado: 56 pruebas en navegador OK · ⏳ activar GitHub Pages |
+| 2. Dashboard público e interactivo | ✅ Publicado en GitHub Pages: 56 pruebas en navegador OK |
 | 3. Reel con IA (guion, voz propia clonada, imágenes, música, subtítulos) | ✅ Terminado: 30 comprobaciones OK ([`reel/`](reel/README.md)) |
 | 4. Publicación en LinkedIn y README final | ⏳ Textos y capturas listos en [`docs/publicacion/`](docs/publicacion/) |
 
