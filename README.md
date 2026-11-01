@@ -8,7 +8,7 @@ Autor: **Oscar Andres Chavez Inocente**.
 | Producto | Enlace |
 |---|---|
 | Dashboard público | https://o-chavx.github.io/Tarea_3/web/ |
-| Publicación de LinkedIn con el reel | *pendiente* |
+| Publicación de LinkedIn con el reel | https://lnkd.in/p/dtGPJvpm |
 | Publicación de LinkedIn con capturas del dashboard | *pendiente* |
 | Reel (archivo) | [`reel/reel.mp4`](reel/reel.mp4): 51 s, vertical, con voz generada con IA a partir de mi voz |
 | Repositorio | https://github.com/O-Chavx/Tarea_3 |

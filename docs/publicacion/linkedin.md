@@ -48,6 +48,6 @@ Después de publicar, copia el enlace de cada una (menú «…» → «Copiar en
 >
 > 🔗 Explóralo: https://o-chavx.github.io/Tarea_3/web/
 > 💻 Repositorio: https://github.com/O-Chavx/Tarea_3
-> 🎬 Reel con los hallazgos: [ENLACE A LA PUBLICACIÓN 1]
+> 🎬 Reel con los hallazgos: https://lnkd.in/p/dtGPJvpm
 >
 > #Peru #DataVisualization #Python #D3js #Pobreza #Mineria

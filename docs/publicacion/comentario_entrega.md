@@ -8,6 +8,6 @@
 
 **Dashboard público:** https://o-chavx.github.io/Tarea_3/web/
 
-**Publicación de LinkedIn — Reel:** [ENLACE]
+**Publicación de LinkedIn — Reel:** https://lnkd.in/p/dtGPJvpm
 
 **Publicación de LinkedIn — Capturas del dashboard:** [ENLACE]
